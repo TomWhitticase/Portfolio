@@ -62,7 +62,7 @@
   input:required:invalid,
   input:focus:invalid,
   textarea:required:invalid {
-    background-image: url("../images/required.png");
+    background-image: url("images/required.png");
     background-size: 0.5rem;
     background-position: top 0.5rem right 0.5rem;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@
   }
   input:required:valid,
   textarea:required:valid {
-    background-image: url("../images/check.png");
+    background-image: url("images/check.png");
     background-size: 0.75rem;
     background-position: top 0.5rem right 0.5rem;
     background-repeat: no-repeat;
@@ -107,7 +107,7 @@
     @apply bg-tertiary text-quinary;
   }
   body {
-    @apply bg-primary pt-10 pb-40 bg-[url("../images/mountains2.svg")] dark:bg-[url("../images/layered-peaks-orange.svg")];
+    @apply bg-primary pt-10 pb-40 bg-[url("images/mountains2.svg")] dark:bg-[url("images/layered-peaks-orange.svg")];
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

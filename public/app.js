@@ -12,6 +12,34 @@ function menuClick() {
   }
 }
 
+document.getElementById("contact-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendEmail();
+});
+
+function sendEmail() {
+  console.log("beginning send email function.");
+  let formData = {
+    name: "Tom",
+    emailAddress: "tom@tom.com",
+    message: "sample text",
+  };
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "/");
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.onload = function () {
+    console.log(xhr.responseText);
+    if (xhr.responseText == "success") {
+      alert("Email sent");
+    } else {
+      alert("Something went wrong! Email not sent.");
+    }
+  };
+
+  xhr.send(JSON.stringify(formData));
+}
+
 function dark() {
   document.getElementsByTagName("html")[0].className = "dark";
   document.getElementById("toggleDark-icon").className =
