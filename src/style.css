@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1 {
+    @apply text-3xl font-bold text-quinary dark:text-primary drop-shadow-lg;
+  }
+  p {
+    @apply text-quaternary text-lg drop-shadow-lg;
+  }
+  h2 {
+    @apply text-secondary font-bold text-4xl drop-shadow-lg;
+  }
+  h3 {
+    @apply text-secondary font-bold text-2xl drop-shadow-lg;
+  }
+  h4 {
+    @apply text-primary text-sm drop-shadow-lg;
+  }
+
+  .btn1 {
+    @apply bg-secondary text-primary transition-all duration-300 shadow-lg px-10 py-5 font-bold text-lg hover:scale-[1.02] active:scale-100;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .btn2 {
+    @apply text-secondary
+        hover:text-quaternary
+        border border-secondary
+        hover:bg-secondary
+        focus:outline-none
+        font-medium
+        rounded-lg
+        text-sm
+        px-5
+        py-2.5
+        text-center
+        mr-2
+        mb-2;
+  }
+
+  .topnav a {
+    @apply float-right dark:text-primary hover:scale-[1.05] active:scale-100 hover:text-secondary text-xl my-auto mx-8;
+    text-align: center;
+  }
+  .topnav-mobile > a {
+    @apply float-none py-4 m-0 shadow;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    @apply my-10 p-10 mx-auto md:mx-40 w-auto  text-center;
+    display: block;
+  }
+
+  input:required:invalid,
+  input:focus:invalid,
+  textarea:required:invalid {
+    background-image: url("../images/required.png");
+    background-size: 0.5rem;
+    background-position: top 0.5rem right 0.5rem;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;
+  }
+  input:required:valid,
+  textarea:required:valid {
+    background-image: url("../images/check.png");
+    background-size: 0.75rem;
+    background-position: top 0.5rem right 0.5rem;
+    background-repeat: no-repeat;
+  }
+
+  #header {
+    @apply shadow-lg bg-primary/80 backdrop-blur-lg dark:bg-septary/80  h-20 p-2;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .smaller {
+    height: 60px !important;
+  }
+  .card {
+    @apply w-auto h-auto bg-none;
+  }
+  .card img {
+    @apply object-cover shadow-lg rounded-lg;
+  }
+  .card > div {
+    @apply py-4;
+  }
+  .topnav div:hover {
+    @apply bg-tertiary text-quinary dark:bg-septary dark:text-primary;
+  }
+  .topnav div.active {
+    @apply bg-tertiary text-quinary;
+  }
+  body {
+    @apply bg-primary pt-10 pb-40 bg-[url("../images/mountains2.svg")] dark:bg-[url("../images/layered-peaks-orange.svg")];
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: "Varela Round";
+  }
+  footer {
+    @apply bg-quinary;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    padding: 20px;
+
+    font-size: x-large;
+    text-align: center;
+  }
+
+  .skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .skills > div > img {
+    @apply w-8 m-auto;
+  }
+  .skills > div > p {
+    @apply text-sm text-quaternary text-center;
+  }
+  .skills > div {
+    @apply bg-tertiary dark:bg-senary font-bold rounded-md text-base m-2 w-20 h-20 p-2;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .tag {
+    @apply bg-tertiary dark:bg-senary dark:text-quaternary text-quinary text-sm rounded-md p-2 m-1 shadow-lg;
+  }
+  .highlight-tag {
+    @apply bg-secondary scale-105 text-primary text-sm rounded-md p-2 m-1 shadow-lg;
+  }
+  .socials {
+    @apply text-secondary text-center text-xl p-4;
+  }
+  .socials > a {
+    @apply p-2;
+  }
+  .project-container {
+    @apply flex flex-wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  .project-container > * {
+    @apply w-64;
+  }
+}
+
+footer > * {
+  margin: 10px;
+}
+
+.flip-in-ver-right {
+  -webkit-animation: flip-in-ver-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: flip-in-ver-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes flip-in-ver-right {
+  0% {
+    -webkit-transform: rotateY(-80deg);
+    transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+@keyframes flip-in-ver-right {
+  0% {
+    -webkit-transform: rotateY(-80deg);
+    transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
