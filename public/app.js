@@ -170,6 +170,18 @@ const nextButton = document.getElementById("slide-next");
 let pageActive = 1;
 let nPages;
 
+//disable scrolling through projects
+document
+  .querySelector("#projects-container")
+  .addEventListener("wheel", preventScroll, { passive: false });
+
+function preventScroll(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  return false;
+}
+
 nextButton.addEventListener("click", () => {
   changeCarouselPage(pageActive + 1);
 });
