@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vercel/node": "^2.5.18",
     "nodemon": "^2.0.20",
     "tailwindcss": "^3.1.8"
   },

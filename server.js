@@ -30,10 +30,14 @@ app.post("/", (req, res) => {
   });
 
   const mailOptions = {
-    from: req.body.emailAddress,
     to: recipient,
     subject: emailSubject,
-    text: req.body.message,
+    text:
+      req.body.message +
+      "\n\nFROM: " +
+      req.body.name +
+      "\nEMAIL ADDRESS: " +
+      req.body.emailAddress,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

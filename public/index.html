@@ -1,272 +1,352 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <!-- icons -->
-    <script src="https://kit.fontawesome.com/52a273af09.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/52a273af09.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
-    
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela Round"
+      rel="stylesheet"
+    />
+
     <script src="app.js" defer></script>
-    <link rel="stylesheet" href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" rel="stylesheet" />
     <title>Tom Whitticase Portfolio</title>
-</head>
+  </head>
 
-<div>
-    <div class="fixed bottom-4 left-4 w-10 h-10 rounded-lg bg-primary dark:bg-septary shadow-lg text-xl flex items-center justify-center z-50">
-        <a href="javascript:toggleDark()"><i id="toggleDark-icon"class="fa-regular fa-sun "></i></a>
+  <body>
+    <div
+      class="fixed bottom-4 left-4 w-10 h-10 rounded-lg bg-primary dark:bg-septary shadow-lg text-xl flex items-center justify-center z-50"
+    >
+      <a href="javascript:toggleDark()"
+        ><i id="toggleDark-icon" class="fa-regular fa-sun"></i
+      ></a>
     </div>
+
+    <div
+      class="top-only fixed left-[50%] -translate-x-[50%] bottom-4 text-secondary"
+    >
+      <i id="toggleDark-icon" class="fa fa-arrow-down"></i>
+    </div>
+
     <div id="header">
-        <a id="title" href="" class="text-quinary dark:text-primary font-bold my-auto mx-2 text-3xl">Tom Whitticase </a>
-        <div class="topnav hidden flex-row lg:flex p-4 my-auto">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>  
-        </div>
+      <a
+        id="title"
+        href=""
+        class="text-quinary dark:text-primary font-bold my-auto mx-2 text-3xl"
+        >Tom Whitticase
+      </a>
+      <div class="topnav hidden flex-row lg:flex p-4 my-auto">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-        <div class="lg:hidden p-5 my-auto">
-            <div onclick="menuClick()">
-                <i id="menu-icon" class="fa fa-bars dark:text-primary"></i>
-            </div>
+      <div class="lg:hidden p-5 my-auto">
+        <div onclick="menuClick()">
+          <i id="menu-icon" class="fa fa-bars dark:text-primary"></i>
         </div>
-        
-        
+      </div>
     </div>
 
-        <div id="topnav-mobile" class="flex flex-col topnav-mobile topnav hidden lg:hidden  bg-primary/80 backdrop-blur-lg dark:bg-septary/80 shadow-lg fixed w-full z-10">
-            <a href="#home" onclick="menuClick()">Home</a>
-            <a href="#about" onclick="menuClick()">About</a>
-            <a href="#contact" onclick="menuClick()">Contact</a>
-            <a href="#projects" onclick="menuClick()">Projects</a>
-        </div>
- 
+    <div
+      id="topnav-mobile"
+      class="flex flex-col topnav-mobile topnav hidden lg:hidden bg-primary/80 backdrop-blur-lg dark:bg-septary/80 shadow-lg fixed w-full z-10 my-10"
+    >
+      <a href="#home" onclick="menuClick()">Home</a>
+      <a href="#about" onclick="menuClick()">About</a>
+      <a href="#contact" onclick="menuClick()">Contact</a>
+      <a href="#projects" onclick="menuClick()">Projects</a>
+    </div>
 
-  
-        <div id="home" class="container">
-            <div class="flex flex-wrap just justify-center gap-10 lg:my-20">   
-                <!-- <div class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10">   -->
-                <div class="w-full lg:w-1/2">
-                    <h2 class="p-4">Hello there!</h2>
-         
-                    <p class="my-auto">
-                        I am a 2nd year Computer Science student at Loughborough University. I
-                        love programming and have a wide
-                        range of skills including web development, object oriented programming and embedded systems.
-                    </p>
-          
-                    <a download href="resources/tomwhitticaseresume.pdf">
-                        <button class="btn1">
-                            Resume &nbsp
-                            <i class="fa fa-download"></i>
-                        </button>
-                    </a>    
-                    <div class="socials">
-                    <a href="https://www.linkedin.com/in/tom-whitticase/" target="_blank" >
-                        <i class="fa fa-linkedin-square text-secondary drop-shadow-lg"></i>
-                    </a>
-                    <a href="https://github.com/TomWhitticase" target="_blank" >  
-                        <i class="fa fa-github text-secondary drop-shadow-lg"></i>
-                    </a>
-                    <a href="mailto: tom.pe.wh@gmail.com" target="_blank" >
-                        <i class="fa fa-envelope text-secondary drop-shadow-lg"></i>
-                    </a>      
-                    <a href="https://www.instagram.com/tom.p.w/" target="_blank">
-                        <i class="fa fa-instagram text-secondary drop-shadow-lg"></i>
-                    </a>  </div>   
-                </div>
-                <div class="hidden lg:block relative my-auto mx-8">
-                    <img class="rounded-lg object-cover w-24 lg:w-52 " src="images/tombeachmalaga.jpg">
-                    <span class="bg-secondary rounded-lg w-24 lg:w-52 h-full left-10 bottom-10 absolute -z-10  "></span>
-                    <span class="bg-orange-500 rounded-lg w-24 lg:w-52 h-full left-20 bottom-20 absolute -z-20  "></span>
-                </div>
-                <!-- <div class="relative inline-block">
+    <div id="home" class="container">
+      <div class="flex flex-wrap just justify-center gap-10 lg:my-20">
+        <!-- <div class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10">   -->
+        <div class="w-full lg:w-1/2">
+          <h2 class="p-4">Hello there!</h2>
+
+          <p class="my-auto">
+            I am a 2nd year Computer Science student at Loughborough University.
+            I love programming and have a wide range of skills including web
+            development, object oriented programming and embedded systems.
+          </p>
+
+          <a download href="resources/tomwhitticaseresume.pdf">
+            <button class="btn1">
+              Resume &nbsp
+              <i class="fa fa-download"></i>
+            </button>
+          </a>
+          <div class="socials">
+            <a
+              href="https://www.linkedin.com/in/tom-whitticase/"
+              target="_blank"
+            >
+              <i
+                class="fa fa-linkedin-square text-secondary drop-shadow-lg"
+              ></i>
+            </a>
+            <a href="https://github.com/TomWhitticase" target="_blank">
+              <i class="fa fa-github text-secondary drop-shadow-lg"></i>
+            </a>
+            <a href="mailto: tom.pe.wh@gmail.com" target="_blank">
+              <i class="fa fa-envelope text-secondary drop-shadow-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/tom.p.w/" target="_blank">
+              <i class="fa fa-instagram text-secondary drop-shadow-lg"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block relative my-auto mx-8">
+          <img
+            class="rounded-lg object-cover w-24 lg:w-52"
+            src="images/tombeachmalaga.jpg"
+          />
+          <span
+            class="bg-secondary rounded-lg w-24 lg:w-52 h-full left-10 bottom-10 absolute -z-10"
+          ></span>
+          <span
+            class="bg-orange-500 rounded-lg w-24 lg:w-52 h-full left-20 bottom-20 absolute -z-20"
+          ></span>
+        </div>
+        <!-- <div class="relative inline-block">
                     
                     
                 </div> -->
-            </div>
-        </div>
-        <div id="about" class="bg-primary dark:bg-septary">
-        <div class="container">
-            <div class="my-10 mx-0 2xl:mx-10 flex flex-col lg:flex-row justify-center align-content-middle gap-10">
-                <div class="flex flex-col ">
-                    <img class="object-cover w-52 lg:w-80 rounded-lg m-auto" src="images/openday.jpg">
-                    <p>Some information about me lorem ipsum stuff bla bla bla bla.</p>
-                </div>
-                
-                <div>
-                    <h1 class="text-center">Languages</h1>
-                    <div class="skills">
-                      <div class="skill">
-                        <img src="images/html-5.png">
-                        <p>HTML</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/css-3.png">
-                        <p>CSS</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/js.png">
-                        <p>JavaScript</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/typescript.png">
-                        <p>TypeScript</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/php.png">
-                        <p>PHP</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/database.png">
-                        <p>SQL</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/python.png">
-                        <p>Python</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/java.webp">
-                        <p>Java</p>
-                      </div>
-                      <div class="skill">
-                        <img src="images/c-sharp.png">
-                        <p>C#</p>
-                      </div>
-                    </div>
-
-                    <h1 class="text-center">Frameworks</h1>
-                    <div class="skills">
-                        <div class="skill">
-                            <img src="images/node-js.png">
-                            <p>Node.js</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/jquery.png">
-                            <p>jQuery</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/tailwind.png">
-                            <p>Tailwind</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/bootstrap.png">
-                            <p>Bootstrap</p>
-                        </div>
-                    </div>
-
-                    <h1 class="text-center">Tools</h1>
-                    <div class="skills">
-                        <div class="skill">
-                            <img src="images/vscode.png">
-                            <p>VS Code</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/visualstudio.png">
-                            <p>Visual Studio</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/unity.png">
-                            <p>Unity</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/eclipse.png">
-                            <p>Eclipse</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/github.png">
-                            <p>Github</p>
-                        </div>
-                        <div class="skill">
-                            <img src="images/visualParadigm.png">
-                            <p>Visual Paradigm</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        </div>
-    <div class="container">
-        <div class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10">
-            <div>
-                <h2>Personal Interests</h2>
-            <p class="my-auto">I love skiing, hiking and exploring. I am passionate about music and I enjoy building and playing guitars.</p>
-            </div>
-            
-            <img class="w-56 h-full rounded-lg m-auto" src="images/topofmountain.jpg">      
-        </div>           
+      </div>
     </div>
-        
+    <div id="about" class="bg-primary dark:bg-septary">
+      <div class="container">
+        <div
+          class="my-10 mx-0 2xl:mx-10 flex flex-col lg:flex-row justify-center align-content-middle gap-10"
+        >
+          <div class="flex flex-col">
+            <img
+              class="object-cover w-52 lg:w-80 rounded-lg m-auto"
+              src="images/openday.jpg"
+            />
+            <p>Some information about me lorem ipsum stuff bla bla bla bla.</p>
+          </div>
 
-
- 
- 
-        <div id="projects" class="bg-primary dark:bg-septary ">
-            <div class="container">
-                <div class="m-8">
-                    <h2>Projects</h2>
-                    <p>
-                        Personal projects and coursework.
-                    </p>
-                </div>
-                
-            
-                <div id="projects-container" class="project-container">
-                    <!-- project cards will be put here with js -->
-                </div>
+          <div>
+            <h1 class="text-center">Languages</h1>
+            <div class="skills">
+              <div class="skill">
+                <img src="images/html-5.png" />
+                <p>HTML</p>
+              </div>
+              <div class="skill">
+                <img src="images/css-3.png" />
+                <p>CSS</p>
+              </div>
+              <div class="skill">
+                <img src="images/js.png" />
+                <p>JavaScript</p>
+              </div>
+              <div class="skill">
+                <img src="images/typescript.png" />
+                <p>TypeScript</p>
+              </div>
+              <div class="skill">
+                <img src="images/php.png" />
+                <p>PHP</p>
+              </div>
+              <div class="skill">
+                <img src="images/database.png" />
+                <p>SQL</p>
+              </div>
+              <div class="skill">
+                <img src="images/python.png" />
+                <p>Python</p>
+              </div>
+              <div class="skill">
+                <img src="images/java.webp" />
+                <p>Java</p>
+              </div>
+              <div class="skill">
+                <img src="images/c-sharp.png" />
+                <p>C#</p>
+              </div>
             </div>
+
+            <h1 class="text-center">Frameworks</h1>
+            <div class="skills">
+              <div class="skill">
+                <img src="images/node-js.png" />
+                <p>Node.js</p>
+              </div>
+              <div class="skill">
+                <img src="images/jquery.png" />
+                <p>jQuery</p>
+              </div>
+              <div class="skill">
+                <img src="images/tailwind.png" />
+                <p>Tailwind</p>
+              </div>
+              <div class="skill">
+                <img src="images/bootstrap.png" />
+                <p>Bootstrap</p>
+              </div>
+            </div>
+
+            <h1 class="text-center">Tools</h1>
+            <div class="skills">
+              <div class="skill">
+                <img src="images/vscode.png" />
+                <p>VS Code</p>
+              </div>
+              <div class="skill">
+                <img src="images/visualstudio.png" />
+                <p>Visual Studio</p>
+              </div>
+              <div class="skill">
+                <img src="images/unity.png" />
+                <p>Unity</p>
+              </div>
+              <div class="skill">
+                <img src="images/eclipse.png" />
+                <p>Eclipse</p>
+              </div>
+              <div class="skill">
+                <img src="images/github.png" />
+                <p>Github</p>
+              </div>
+              <div class="skill">
+                <img src="images/visualParadigm.png" />
+                <p>Visual Paradigm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10"
+      >
+        <div>
+          <h2>Personal Interests</h2>
+          <p class="my-auto">
+            I love skiing, hiking and exploring. I am passionate about music and
+            I enjoy building and playing guitars.
+          </p>
         </div>
 
- 
+        <img
+          class="w-56 h-full rounded-lg m-auto"
+          src="images/topofmountain.jpg"
+        />
+      </div>
+    </div>
 
-    
-  
-        <div id="contact" class="container">
-        <h2> Get in touch</h2>
-        <form id = "contact-form" action="" method="POST">
-            <div class="relative w-full lg:w-1/2 mx-auto my-4 ">
-                <input type="text" name="name" required placeholder="Name" class="dark:bg-senary w-full p-2 pl-8">
-                <i class="fa-solid fa-user absolute top-[50%] -translate-y-[50%] left-2 z-1"></i>
-            </div>
-
-            <div class="relative w-full lg:w-1/2 mx-auto my-4 ">
-                <input type="email" name="email" pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}" required placeholder="Email Address" class="dark:bg-senary w-full p-2 pl-8">
-                <i class="fa-solid fa-at absolute top-[50%] -translate-y-[50%] left-2 z-1"></i>
-            </div>
-      
-            
-            <div class="relative w-full lg:w-1/2 mx-auto my-4 ">
-                <textarea type="text" name="message" rows="4" required placeholder="Message" class="dark:bg-senary w-full p-2 pl-8"></textarea>
-                <i class="fa-solid fa-message absolute top-4 left-2 z-1"></i>
-            </div>
-
-            <button class="btn1" type="submit">Send &nbsp <i class="fa fa-send"></i></button>
-        </form>
+    <div id="projects" class="bg-primary dark:bg-septary">
+      <div class="text-center p-4">
+        <div class="m-auto">
+          <h2>Projects</h2>
+          <p>Personal projects and coursework.</p>
         </div>
-  
+
+        <div class="flex justify-center">
+          <button id="slide-prev" class="btn1 p-2 m-0">
+            <i class="fa fa-angle-left"></i>
+          </button>
+          <div
+            id="carousel-page-numbers"
+            class="flex justify-center items-center gap-2 m-2"
+          >
+            <span>0</span><span>0</span><span>0</span>
+          </div>
+
+          <button id="slide-next" class="btn1 p-2 m-0">
+            <i class="fa fa-angle-right"></i>
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <div
+            id="projects-container"
+            class="w-[18rem] lg:w-[54rem] project-container flex overflow-x-auto scroll-smooth child:w-64 child:flex-shrink-0 child:m-4"
+          >
+            <!-- project cards will be put here with js -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="container">
+      <h2>Get in touch</h2>
+      <form id="contact-form" method="POST">
+        <div class="relative w-full lg:w-1/2 mx-auto my-4">
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Name"
+            class="dark:bg-senary w-full p-2 pl-8"
+          />
+          <i
+            class="fa-solid fa-user absolute top-[50%] -translate-y-[50%] left-2 z-1"
+          ></i>
+        </div>
+
+        <div class="relative w-full lg:w-1/2 mx-auto my-4">
+          <input
+            type="email"
+            name="emailAddress"
+            pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
+            required
+            placeholder="Email Address"
+            class="dark:bg-senary w-full p-2 pl-8"
+          />
+          <i
+            class="fa-solid fa-at absolute top-[50%] -translate-y-[50%] left-2 z-1"
+          ></i>
+        </div>
+
+        <div class="relative w-full lg:w-1/2 mx-auto my-4">
+          <textarea
+            type="text"
+            name="message"
+            rows="4"
+            required
+            placeholder="Message"
+            class="dark:bg-senary w-full p-2 pl-8"
+          ></textarea>
+          <i class="fa-solid fa-message absolute top-4 left-2 z-1"></i>
+        </div>
+
+        <button class="btn1" type="submit">
+          Send &nbsp <i class="fa fa-send"></i>
+        </button>
+      </form>
+    </div>
 
     <footer>
-        <a href="https://www.linkedin.com/in/tom-whitticase/" target="_blank" >
-            <i class="fa fa-linkedin-square text-primary"></i>
-        </a>
-        <a href="https://github.com/TomWhitticase" target="_blank" >  
-            <i class="fa fa-github text-primary"></i>
-        </a>
-        <a href="mailto: tom.pe.wh@gmail.com" target="_blank" >
-            <i class="fa fa-envelope text-primary"></i>
-        </a>      
-        <a href="https://www.instagram.com/tom.p.w/" target="_blank">
-            <i class="fa fa-instagram text-primary"></i>
-        </a>
+      <a href="https://www.linkedin.com/in/tom-whitticase/" target="_blank">
+        <i class="fa fa-linkedin-square text-primary"></i>
+      </a>
+      <a href="https://github.com/TomWhitticase" target="_blank">
+        <i class="fa fa-github text-primary"></i>
+      </a>
+      <a href="mailto: tom.pe.wh@gmail.com" target="_blank">
+        <i class="fa fa-envelope text-primary"></i>
+      </a>
+      <a href="https://www.instagram.com/tom.p.w/" target="_blank">
+        <i class="fa fa-instagram text-primary"></i>
+      </a>
 
-        <div class="w-auto mx-10 h-[1px] bg-senary"></div>
-        <h4>Made with <i class="fa fa-heart mx-1"></i> by Tom Whitticase in Brockington, Loughborough University</h4>
+      <div class="w-auto mx-10 h-[1px] bg-senary"></div>
+      <h4>
+        Made with <i class="fa fa-heart mx-1"></i> by Tom Whitticase in
+        Brockington, Loughborough University
+      </h4>
     </footer>
-</body>
-
+  </body>
 </html>
 <!-- 
     TODO:

@@ -1,3 +1,17 @@
+window.onscroll = () => {
+  let elements = document.getElementsByClassName("top-only");
+
+  if (window.scrollY != 0) {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.add("hidden");
+    }
+  } else {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove("hidden");
+    }
+  }
+};
+
 function menuClick() {
   let nav = document.getElementById("topnav-mobile");
   let icon = document.getElementById("menu-icon");
@@ -12,19 +26,19 @@ function menuClick() {
   }
 }
 
-document.getElementById("contact-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  sendEmail();
-});
+//contact form send email
+const contactForm = document.getElementById("contact-form");
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault(); //prevent form submit
 
-function sendEmail() {
-  console.log("beginning send email function.");
+  //get form data for email
   let formData = {
-    name: "Tom",
-    emailAddress: "tom@tom.com",
-    message: "sample text",
+    name: contactForm.elements["name"].value,
+    emailAddress: contactForm.elements["emailAddress"].value,
+    message: contactForm.elements["message"].value,
   };
 
+  //send email
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "/");
   xhr.setRequestHeader("content-type", "application/json");
@@ -36,9 +50,8 @@ function sendEmail() {
       alert("Something went wrong! Email not sent.");
     }
   };
-
   xhr.send(JSON.stringify(formData));
-}
+});
 
 function dark() {
   document.getElementsByTagName("html")[0].className = "dark";
@@ -87,9 +100,18 @@ function createProjectCard(title, date, img, description, tags, open, code) {
 
 //create project cards
 createProjectCard(
+  "To-do List",
+  "September 2022",
+  "images/WordGuess.png",
+  "A simple to-do list web app made using react, typescript, and tailwind.",
+  "React,TypeScript,Tailwind",
+  "https://tomwhitticase.github.io/WordGuess/",
+  "https://github.com/TomWhitticase/WordGuess"
+);
+createProjectCard(
   "Word Guess",
   "August 2022",
-  "../images/WordGuess.png",
+  "images/WordGuess.png",
   "A wordle clone with some extra features. Created using vanilla html,css, and javascript. Uses AJAX and a random word API.",
   "HTML,CSS,JavaScript,AJAX,API",
   "https://tomwhitticase.github.io/WordGuess/",
@@ -98,7 +120,7 @@ createProjectCard(
 createProjectCard(
   "Word Finder",
   "August 2022",
-  "../images/WordFinder.png",
+  "images/WordFinder.png",
   "A wordle solver. Created using vanilla html,css, and javascript. Uses AJAX and a random word API.",
   "HTML,CSS,JavaScript,AJAX,API",
   "https://tomwhitticase.github.io/WordFinder/",
@@ -107,7 +129,7 @@ createProjectCard(
 createProjectCard(
   "Wedding Venues",
   "April 2022",
-  "../images/WeddingVenues.png",
+  "images/WeddingVenues.png",
   "A website for searching for wedding venues. Coursework for my 1st year web programming module for which I achieved a first. Languages used: html, css, js, sql, php. Styled using bootstrap.",
   "HTML,CSS,JavaScript,AJAX,JSON,SQL,PHP",
   "https://wedding-venues.vercel.app/",
@@ -116,7 +138,7 @@ createProjectCard(
 createProjectCard(
   "Computer Accessories Shop",
   "May 2022",
-  "../images/oopcw.png",
+  "images/oopcw.png",
   "A Java application for buying and selling devices",
   "Java,UML",
   "",
@@ -125,7 +147,7 @@ createProjectCard(
 createProjectCard(
   "Library Book System",
   "December 2021",
-  "../images/librarySystem.png",
+  "images/librarySystem.png",
   "A python application for managing library book loans",
   "Python,Tkinter",
   "",
@@ -134,23 +156,73 @@ createProjectCard(
 createProjectCard(
   "Arduino Data Monitor",
   "May 2021",
-  "../images/arduino.png",
+  "images/arduino.png",
   "Aprogram for storing data on data channels on an arduino uno",
   "C,Arduino",
   "",
   "https://github.com/TomWhitticase/DataMonitor"
 );
 
-//detect dark/light mode preference
-if (window.matchMedia) {
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    dark();
-  } else {
-    light();
+//carousel stuff//
+const slidesContainer = document.getElementById("projects-container");
+const prevButton = document.getElementById("slide-prev");
+const nextButton = document.getElementById("slide-next");
+let pageActive = 1;
+let nPages;
+
+nextButton.addEventListener("click", () => {
+  changeCarouselPage(pageActive + 1);
+});
+prevButton.addEventListener("click", () => {
+  changeCarouselPage(pageActive - 1);
+});
+
+function changeCarouselPage(pageNum) {
+  if (pageNum < 0) pageNum = 0;
+  if (pageNum > nPages - 1) pageNum = nPages - 1;
+  pageActive = pageNum;
+  console.log(pageActive);
+
+  //change page number indicator
+  const pageNumbers = document.getElementById("carousel-page-numbers");
+  for (let i = 0; i < pageNumbers.children.length; i++) {
+    pageNumbers.children[i].classList.remove("active-page");
+    if (pageNumbers.children[i].id == "carousel-page-number-" + pageActive) {
+      pageNumbers.children[i].classList.add("active-page");
+    }
   }
-} else {
-  light();
+
+  //scroll carousel to new position
+  const slideWidth = slidesContainer.offsetWidth;
+  slidesContainer.scrollLeft = slideWidth * pageNum;
 }
+
+window.addEventListener(
+  "resize",
+  function (event) {
+    updateCarousel();
+  },
+  true
+);
+updateCarousel();
+function updateCarousel() {
+  const pageNumbers = document.getElementById("carousel-page-numbers");
+  const itemWidth = slidesContainer.children[0].scrollWidth;
+  nPages = Math.ceil(
+    slidesContainer.children.length /
+      Math.floor(slidesContainer.offsetWidth / itemWidth)
+  );
+  pageNumbers.innerHTML = "";
+  for (let i = 0; i < nPages; i++) {
+    pageNumbers.innerHTML += `
+    <span id="carousel-page-number-${i}">${i + 1}</span>
+    `;
+  }
+
+  changeCarouselPage(0);
+}
+////
+
 //detect light/dark mode preference changes
 window
   .matchMedia("(prefers-color-scheme: dark)")
@@ -162,3 +234,13 @@ window
       light();
     }
   });
+//detect dark/light mode preference
+if (window.matchMedia) {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    dark();
+  } else {
+    light();
+  }
+} else {
+  light();
+}
