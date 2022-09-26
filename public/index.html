@@ -29,12 +29,15 @@
     </div>
 
     <div
-      class="top-only fixed left-[50%] -translate-x-[50%] bottom-4 text-secondary"
+      class="top-only fixed left-[50%] -translate-x-[50%] bottom-4 text-secondary text-3xl"
     >
-      <i id="toggleDark-icon" class="fa fa-arrow-down"></i>
+      <i id="toggleDark-icon" class="fa fa-angles-down"></i>
     </div>
 
-    <div id="header">
+    <div
+      id="header"
+      class="flex justify-between fixed top-0 w-full z-10 shadow-lg bg-primary/80 backdrop-blur-lg dark:bg-septary/80 h-20 p-2"
+    >
       <a
         id="title"
         href=""
@@ -182,6 +185,10 @@
                 <p>Node.js</p>
               </div>
               <div class="skill">
+                <img src="images/react.png" />
+                <p>React</p>
+              </div>
+              <div class="skill">
                 <img src="images/jquery.png" />
                 <p>jQuery</p>
               </div>
@@ -270,7 +277,7 @@
         <div class="flex justify-center">
           <div
             id="projects-container"
-            class="w-[18rem] lg:w-[54rem] project-container flex overflow-x-auto scroll-smooth child:w-64 child:flex-shrink-0 child:m-4"
+            class="touch-none w-[18rem] lg:w-[54rem] project-container flex items-start overflow-x-auto scroll-smooth child:w-64 child:flex-shrink-0 child:m-4"
           >
             <!-- project cards will be put here with js -->
           </div>
@@ -353,5 +360,6 @@
     photo graphic
     dark mode
     contact form backend
+    prevent mobile scrolling projects
 
  -->

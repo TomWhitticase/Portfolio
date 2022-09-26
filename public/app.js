@@ -72,9 +72,9 @@ function toggleDark() {
 
 function createProjectCard(title, date, img, description, tags, open, code) {
   let card = `
-  <div class="card">
-    <img src="${img}">
-    <div class="bg-none">
+  <div class="card w-auto h-auto bg-none">
+    <img class="object-cover shadow-lg rounded-lg py-2" src="${img}">
+    <div class="bg-none py-2">
       <p class="text-secondary text-left text-sm drop-shadow-lg">${date}</p>
       <p class="text-secondary text-left text-2xl drop-shadow-lgfont-bold">${title}</p>
       <p class="text-quaternary drop-shadow-lg text-left text-sm">${description}</p>
@@ -100,13 +100,13 @@ function createProjectCard(title, date, img, description, tags, open, code) {
 
 //create project cards
 createProjectCard(
-  "To-do List",
+  "Meeting Planner",
   "September 2022",
   "images/WordGuess.png",
-  "A simple to-do list web app made using react, typescript, and tailwind.",
+  "A simple planner web app made using react, typescript, and tailwind.",
   "React,TypeScript,Tailwind",
-  "https://tomwhitticase.github.io/WordGuess/",
-  "https://github.com/TomWhitticase/WordGuess"
+  "https://tomwhitticase.github.io/MeetingPlanner/",
+  "https://github.com/TomWhitticase/MeetingPlanner"
 );
 createProjectCard(
   "Word Guess",
@@ -170,17 +170,16 @@ const nextButton = document.getElementById("slide-next");
 let pageActive = 1;
 let nPages;
 
-//disable scrolling through projects
+//clamp touch scrolling
+let updated = 0,
+  st;
+
 document
-  .querySelector("#projects-container")
-  .addEventListener("wheel", preventScroll, { passive: false });
-
-function preventScroll(e) {
-  e.preventDefault();
-  e.stopPropagation();
-
-  return false;
-}
+  .getElementById("projects-container")
+  .addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    changeCarouselPage(pageActive + 1);
+  });
 
 nextButton.addEventListener("click", () => {
   changeCarouselPage(pageActive + 1);
@@ -190,8 +189,8 @@ prevButton.addEventListener("click", () => {
 });
 
 function changeCarouselPage(pageNum) {
-  if (pageNum < 0) pageNum = 0;
-  if (pageNum > nPages - 1) pageNum = nPages - 1;
+  if (pageNum < 0) pageNum = nPages - 1;
+  if (pageNum > nPages - 1) pageNum = 0;
   pageActive = pageNum;
   console.log(pageActive);
 
@@ -211,7 +210,7 @@ function changeCarouselPage(pageNum) {
 
 window.addEventListener(
   "resize",
-  function (event) {
+  () => {
     updateCarousel();
   },
   true
@@ -238,7 +237,7 @@ function updateCarousel() {
 //detect light/dark mode preference changes
 window
   .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", function (e) {
+  .addEventListener("change", (e) => {
     const colorScheme = e.matches ? "dark" : "light";
     if (colorScheme === "dark") {
       dark();

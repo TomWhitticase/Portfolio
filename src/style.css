@@ -7,16 +7,16 @@
     display: none;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-primary rounded-lg shadow-lg;
+    @apply bg-primary dark:bg-septary rounded-lg shadow-lg;
   }
 
   ::-webkit-scrollbar {
-    @apply bg-primary;
+    @apply bg-primary dark:bg-septary;
     width: 12px;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-secondary rounded-lg drop-shadow-lg;
+    @apply bg-secondary rounded-lg drop-shadow-lg hover:bg-secondary/[85%] active:bg-secondary/70;
   }
   h1 {
     @apply text-3xl font-bold text-quinary dark:text-primary drop-shadow-lg;
@@ -57,11 +57,11 @@
   }
 
   .topnav a {
-    @apply float-right dark:text-primary hover:scale-[1.05] active:scale-100 hover:text-secondary text-xl my-auto mx-8;
+    @apply float-right dark:text-primary hover:scale-[1.05] active:scale-100 hover:text-secondary hover:underline decoration-2 dark:hover:text-secondary text-xl my-auto mx-8;
     text-align: center;
   }
   .topnav-mobile > a {
-    @apply float-none py-4 m-0 shadow;
+    @apply float-none py-4 m-0 shadow hover:scale-100;
   }
 
   html {
@@ -90,36 +90,6 @@
     background-repeat: no-repeat;
   }
 
-  #header {
-    @apply shadow-lg bg-primary/80 backdrop-blur-lg dark:bg-septary/80  h-20 p-2;
-
-    display: flex;
-    justify-content: space-between;
-
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-  }
-
-  .smaller {
-    height: 60px !important;
-  }
-  .card {
-    @apply w-auto h-auto bg-none;
-  }
-  .card img {
-    @apply object-cover shadow-lg rounded-lg;
-  }
-  .card > div {
-    @apply py-4;
-  }
-  .topnav div:hover {
-    @apply bg-tertiary text-quinary dark:bg-septary dark:text-primary;
-  }
-  .topnav div.active {
-    @apply bg-tertiary text-quinary;
-  }
   body {
     @apply bg-primary pt-10 pb-40 bg-[url("images/mountains2.svg")] dark:bg-[url("images/layered-peaks-orange.svg")];
     background-attachment: fixed;
