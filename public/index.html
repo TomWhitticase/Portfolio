@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <!-- icons -->
     <script
       src="https://kit.fontawesome.com/52a273af09.js"
@@ -255,8 +254,24 @@
     <div id="projects" class="bg-primary dark:bg-septary">
       <div class="text-center p-4">
         <div class="m-auto">
-          <h2>Projects</h2>
-          <p>Personal projects and coursework.</p>
+          <h2 class="m-4">Projects</h2>
+          <p>Click a tag to only show relevant projects.</p>
+        </div>
+        <div>
+          <div class="tags justify-center m-4">
+            <div class="tag" onclick="tagClick(this)">HTML</div>
+            <div class="tag" onclick="tagClick(this)">CSS</div>
+            <div class="tag" onclick="tagClick(this)">JavaScript</div>
+            <div class="tag" onclick="tagClick(this)">AJAX</div>
+            <div class="tag" onclick="tagClick(this)">API</div>
+            <div class="tag" onclick="tagClick(this)">TypeScript</div>
+            <div class="tag" onclick="tagClick(this)">PHP</div>
+            <div class="tag" onclick="tagClick(this)">SQL</div>
+            <div class="tag" onclick="tagClick(this)">Java</div>
+            <div class="tag" onclick="tagClick(this)">Python</div>
+            <div class="tag" onclick="tagClick(this)">React</div>
+            <div class="tag" onclick="tagClick(this)">Tailwind</div>
+          </div>
         </div>
 
         <div class="flex justify-center">
@@ -277,7 +292,7 @@
         <div class="flex justify-center">
           <div
             id="projects-container"
-            class="touch-none w-[18rem] lg:w-[54rem] project-container flex items-start overflow-x-auto scroll-smooth child:w-64 child:flex-shrink-0 child:m-4"
+            class="lg:w-[54rem] project-container flex items-start overflow-hidden scroll-smooth child:w-64 child:flex-shrink-0 child:m-4"
           >
             <!-- project cards will be put here with js -->
           </div>

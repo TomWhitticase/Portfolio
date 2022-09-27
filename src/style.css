@@ -132,7 +132,7 @@
     flex-wrap: wrap;
   }
   .tag {
-    @apply bg-tertiary dark:bg-senary dark:text-quaternary text-quinary text-sm rounded-md p-2 m-1 shadow-lg;
+    @apply bg-tertiary cursor-pointer dark:bg-senary dark:text-quaternary text-quinary text-sm rounded-md p-2 m-1 shadow-lg;
   }
   .highlight-tag {
     @apply bg-secondary scale-105 text-primary text-sm rounded-md p-2 m-1 shadow-lg;

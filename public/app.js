@@ -12,6 +12,55 @@ window.onscroll = () => {
   }
 };
 
+function tagClick(tag) {
+  //get if tag was highlighted or not
+  const highlighted = tag.classList.contains("highlight-tag");
+
+  //get all tags matching tag clicked
+  let allTags = [...document.getElementsByClassName("tag")];
+  let tags = [];
+  for (let i = 0; i < allTags.length; i++) {
+    if (tag.innerHTML == allTags[i].innerHTML) {
+      tags.push(allTags[i]);
+    }
+  }
+
+  //toggle tags highlight
+  for (let i = 0; i < tags.length; i++) {
+    if (highlighted) tags[i].classList.remove("highlight-tag");
+    else {
+      tags[i].classList.add("highlight-tag");
+    }
+  }
+
+  //only show cards containing highlighted tags
+  const cards = document.getElementsByClassName("project-card");
+  for (let i = 0; i < cards.length; i++) {
+    let projectTags = cards[i].querySelectorAll(":scope > div > .tags > .tag");
+    let containsHighlightedTag = false;
+    for (let j = 0; j < projectTags.length; j++) {
+      if (projectTags[j].classList.contains("highlight-tag")) {
+        containsHighlightedTag = true;
+      }
+    }
+    if (containsHighlightedTag) {
+      cards[i].classList.remove("hidden");
+    } else {
+      cards[i].classList.add("hidden");
+    }
+  }
+
+  //if no tags highlighted then show all projects
+  let nTags = document.querySelectorAll(".highlight-tag").length;
+  if (nTags == 0) {
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.remove("hidden");
+    }
+  }
+
+  updateCarousel();
+}
+
 function menuClick() {
   let nav = document.getElementById("topnav-mobile");
   let icon = document.getElementById("menu-icon");
@@ -43,7 +92,6 @@ contactForm.addEventListener("submit", (e) => {
   xhr.open("POST", "/");
   xhr.setRequestHeader("content-type", "application/json");
   xhr.onload = function () {
-    console.log(xhr.responseText);
     if (xhr.responseText == "success") {
       alert("Email sent");
     } else {
@@ -72,7 +120,7 @@ function toggleDark() {
 
 function createProjectCard(title, date, img, description, tags, open, code) {
   let card = `
-  <div class="card w-auto h-auto bg-none">
+  <div class="project-card w-auto h-auto bg-none">
     <img class="object-cover shadow-lg rounded-lg py-2" src="${img}">
     <div class="bg-none py-2">
       <p class="text-secondary text-left text-sm drop-shadow-lg">${date}</p>
@@ -81,7 +129,7 @@ function createProjectCard(title, date, img, description, tags, open, code) {
       <div class="tags">`;
   let tagsSplit = tags.split(",");
   for (let i = 0; i < tagsSplit.length; i++) {
-    card += `<div class="tag">${tagsSplit[i]}</div>`;
+    card += `<div class="tag" onclick="tagClick(this)">${tagsSplit[i]}</div>`;
   }
   card += `</div>
       <div class="flex justify-between m-4">`;
@@ -170,17 +218,6 @@ const nextButton = document.getElementById("slide-next");
 let pageActive = 1;
 let nPages;
 
-//clamp touch scrolling
-let updated = 0,
-  st;
-
-document
-  .getElementById("projects-container")
-  .addEventListener("touchstart", (e) => {
-    e.preventDefault();
-    changeCarouselPage(pageActive + 1);
-  });
-
 nextButton.addEventListener("click", () => {
   changeCarouselPage(pageActive + 1);
 });
@@ -192,7 +229,6 @@ function changeCarouselPage(pageNum) {
   if (pageNum < 0) pageNum = nPages - 1;
   if (pageNum > nPages - 1) pageNum = 0;
   pageActive = pageNum;
-  console.log(pageActive);
 
   //change page number indicator
   const pageNumbers = document.getElementById("carousel-page-numbers");
@@ -218,11 +254,15 @@ window.addEventListener(
 updateCarousel();
 function updateCarousel() {
   const pageNumbers = document.getElementById("carousel-page-numbers");
-  const itemWidth = slidesContainer.children[0].scrollWidth;
-  nPages = Math.ceil(
-    slidesContainer.children.length /
-      Math.floor(slidesContainer.offsetWidth / itemWidth)
-  );
+  const nProjects = slidesContainer.querySelectorAll(
+    ":scope > :not(.hidden)"
+  ).length;
+
+  //carousel will have 3 items when screen is lg (1024px), 1 item when below;
+  nPages = nProjects;
+  if (screen.width >= 1024) nPages = Math.ceil(nProjects / 3);
+  console.log("nPages: " + nPages);
+
   pageNumbers.innerHTML = "";
   for (let i = 0; i < nPages; i++) {
     pageNumbers.innerHTML += `
