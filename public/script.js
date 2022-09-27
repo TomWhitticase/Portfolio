@@ -243,14 +243,20 @@ function changeCarouselPage(pageNum) {
   const slideWidth = slidesContainer.offsetWidth;
   slidesContainer.scrollLeft = slideWidth * pageNum;
 }
+window.onresize = () => {
+  updateCarousel();
+};
+window.onload = () => {
+  updateCarousel();
+};
 
-window.addEventListener(
-  "resize",
-  () => {
-    updateCarousel();
-  },
-  true
-);
+// window.addEventListener(
+//   "resize",
+//   () => {
+//     updateCarousel();
+//   },
+//   true
+// );
 updateCarousel();
 function updateCarousel() {
   const pageNumbers = document.getElementById("carousel-page-numbers");
