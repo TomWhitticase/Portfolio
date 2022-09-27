@@ -1,0 +1,72 @@
+{
+  "projects": [
+    {
+      "title": "Planner",
+      "date": "September 2022",
+      "image": "images/planner.png",
+      "description": "A web app for keeping track of meetings.",
+      "tags": ["React", "JavaScript", "Tailwind"],
+      "site": "https://tomwhitticase.github.io/Planner/",
+      "code": "https://github.com/TomWhitticase/Planner"
+    },
+    {
+      "title": "Adventure Game",
+      "date": "October 2019",
+      "image": "images/adventureGame.png",
+      "description": "An 2D sandbox game featuring procedurally generated tile terrain, building, mining, crafting NPCs with pathfinding and combat. Created for my A-Level CS Coursework",
+      "tags": ["C#", "Unity"],
+      "code": "https://github.com/TomWhitticase/AdventureGame"
+    },
+    {
+      "title": "Word Guess",
+      "date": "August 2022",
+      "image": "images/wordGuess.png",
+      "description": "A wordle clone with some extra features.",
+      "tags": ["HTML", "CSS", "JavaScript", "API"],
+      "site": "https://tomwhitticase.github.io/WordGuess/",
+      "code": "https://github.com/TomWhitticase/WordGuess"
+    },
+    {
+      "title": "Word Finder",
+      "date": "August 2022",
+      "image": "images/wordFinder.png",
+      "description": "A website that helps you solve wordles.",
+      "tags": ["HTML", "CSS", "JavaScript", "API"],
+      "site": "https://tomwhitticase.github.io/WordFinder/",
+      "code": "https://github.com/TomWhitticase/WordFinder"
+    },
+    {
+      "title": "Wedding Venue Finder",
+      "date": "April 2022",
+      "image": "images/weddingVenues.png",
+      "description": "A website for searching for a wedding venue.",
+      "tags": ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
+      "site": "https://wedding-venues.vercel.app/",
+      "code": "https://github.com/TomWhitticase/WeddingVenues"
+    },
+    {
+      "title": "Computer Accessories Shop",
+      "date": "May 2022",
+      "image": "images/computerAccessoriesShop.png",
+      "description": "An application for customers to buy devices and admins to manage stock.",
+      "tags": ["Java", "Eclipse"],
+      "code": "https://github.com/TomWhitticase/ComputerAccessoriesShop"
+    },
+    {
+      "title": "Library Book Loans ",
+      "date": "December 2022",
+      "image": "images/librarySystem.png",
+      "description": "An application for librarians to manage book loans and analyze trends to give personalised book reccomendations.",
+      "tags": ["Python", "Tkinter", "Matplotlib"],
+      "code": "https://github.com/TomWhitticase/LibrarySystem"
+    },
+    {
+      "title": "Data Channel Monitor",
+      "date": "May 2022",
+      "image": "images/arduino.png",
+      "description": "An arduino program for displaying and interacting with data channels using an lcd screen and buttons.",
+      "tags": ["C++", "Arduino"],
+      "code": "https://github.com/TomWhitticase/DataMonitor"
+    }
+  ]
+}

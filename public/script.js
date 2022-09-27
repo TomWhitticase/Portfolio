@@ -1,3 +1,18 @@
+//screen size (desktop or mobile)
+let screenSize;
+function updateScreenSize(x) {
+  if (x.matches) {
+    // If media query matches
+    screenSize = "desktop";
+  } else {
+    screenSize = "mobile";
+  }
+  updateCarousel();
+}
+window
+  .matchMedia("(min-width: 1024px)")
+  .addEventListener("change", updateScreenSize);
+
 window.onscroll = () => {
   let elements = document.getElementsByClassName("top-only");
 
@@ -118,99 +133,6 @@ function toggleDark() {
   }
 }
 
-function createProjectCard(title, date, img, description, tags, open, code) {
-  let card = `
-  <div class="project-card w-auto h-auto bg-none">
-    <img class="object-cover shadow-lg rounded-lg py-2" src="${img}">
-    <div class="bg-none py-2">
-      <p class="text-secondary text-left text-sm drop-shadow-lg">${date}</p>
-      <p class="text-secondary text-left text-2xl drop-shadow-lgfont-bold">${title}</p>
-      <p class="text-quaternary drop-shadow-lg text-left text-sm">${description}</p>
-      <div class="tags">`;
-  let tagsSplit = tags.split(",");
-  for (let i = 0; i < tagsSplit.length; i++) {
-    card += `<div class="tag" onclick="tagClick(this)">${tagsSplit[i]}</div>`;
-  }
-  card += `</div>
-      <div class="flex justify-between m-4">`;
-  if (open != "") {
-    card += `<a class="text-secondary drop-shadow-lg" href="${open}">View Site <i class="fa fa-arrow-up-right-from-square"></i></a>`;
-  }
-  card += ` 
-        <a class="text-secondary drop-shadow-lg" href="${code}">View Code <i class="fa fa-code"></i></a>
-      </div>
-    </div>
-  </div>
-  `;
-
-  document.getElementById("projects-container").innerHTML += card;
-}
-
-//create project cards
-createProjectCard(
-  "Meeting Planner",
-  "September 2022",
-  "images/WordGuess.png",
-  "A simple planner web app made using react, typescript, and tailwind.",
-  "React,TypeScript,Tailwind",
-  "https://tomwhitticase.github.io/MeetingPlanner/",
-  "https://github.com/TomWhitticase/MeetingPlanner"
-);
-createProjectCard(
-  "Word Guess",
-  "August 2022",
-  "images/WordGuess.png",
-  "A wordle clone with some extra features. Created using vanilla html,css, and javascript. Uses AJAX and a random word API.",
-  "HTML,CSS,JavaScript,AJAX,API",
-  "https://tomwhitticase.github.io/WordGuess/",
-  "https://github.com/TomWhitticase/WordGuess"
-);
-createProjectCard(
-  "Word Finder",
-  "August 2022",
-  "images/WordFinder.png",
-  "A wordle solver. Created using vanilla html,css, and javascript. Uses AJAX and a random word API.",
-  "HTML,CSS,JavaScript,AJAX,API",
-  "https://tomwhitticase.github.io/WordFinder/",
-  "https://github.com/TomWhitticase/WordFinder"
-);
-createProjectCard(
-  "Wedding Venues",
-  "April 2022",
-  "images/WeddingVenues.png",
-  "A website for searching for wedding venues. Coursework for my 1st year web programming module for which I achieved a first. Languages used: html, css, js, sql, php. Styled using bootstrap.",
-  "HTML,CSS,JavaScript,AJAX,JSON,SQL,PHP",
-  "https://wedding-venues.vercel.app/",
-  "https://github.com/TomWhitticase/WeddingVenues"
-);
-createProjectCard(
-  "Computer Accessories Shop",
-  "May 2022",
-  "images/oopcw.png",
-  "A Java application for buying and selling devices",
-  "Java,UML",
-  "",
-  "https://github.com/TomWhitticase/ComputerAccessoriesShop"
-);
-createProjectCard(
-  "Library Book System",
-  "December 2021",
-  "images/librarySystem.png",
-  "A python application for managing library book loans",
-  "Python,Tkinter",
-  "",
-  "https://github.com/TomWhitticase/LibrarySystem"
-);
-createProjectCard(
-  "Arduino Data Monitor",
-  "May 2021",
-  "images/arduino.png",
-  "Aprogram for storing data on data channels on an arduino uno",
-  "C,Arduino",
-  "",
-  "https://github.com/TomWhitticase/DataMonitor"
-);
-
 //carousel stuff//
 const slidesContainer = document.getElementById("projects-container");
 const prevButton = document.getElementById("slide-prev");
@@ -243,32 +165,36 @@ function changeCarouselPage(pageNum) {
   const slideWidth = slidesContainer.offsetWidth;
   slidesContainer.scrollLeft = slideWidth * pageNum;
 }
-window.onresize = () => {
-  updateCarousel();
-};
-window.onload = () => {
-  updateCarousel();
-};
 
-// window.addEventListener(
-//   "resize",
-//   () => {
-//     updateCarousel();
-//   },
-//   true
-// );
-updateCarousel();
+window.addEventListener("keydown", onKeyDown, false);
+function onKeyDown(event) {
+  var keyCode = event.keyCode;
+  switch (keyCode) {
+    case 68: //d
+      updateCarousel();
+      break;
+    case 83: //s
+      alert("Screen: " + screen.width);
+      //@media (min-width: 1024px)
+      break;
+    case 63: //a
+      break;
+  }
+}
+
 function updateCarousel() {
-  const pageNumbers = document.getElementById("carousel-page-numbers");
+  //get number of projects being shown in carousel
   const nProjects = slidesContainer.querySelectorAll(
     ":scope > :not(.hidden)"
   ).length;
 
-  //carousel will have 3 items when screen is lg (1024px), 1 item when below;
-  nPages = nProjects;
-  if (screen.width >= 1024) nPages = Math.ceil(nProjects / 3);
-  console.log("nPages: " + nPages);
+  //set number of pages carousel will have
+  nPages;
+  if (screenSize == "desktop") nPages = Math.ceil(nProjects / 3); //3 projects per page
+  if (screenSize == "mobile") nPages = nProjects; //1 project per page
 
+  //setup page numbering html elements
+  const pageNumbers = document.getElementById("carousel-page-numbers");
   pageNumbers.innerHTML = "";
   for (let i = 0; i < nPages; i++) {
     pageNumbers.innerHTML += `
@@ -276,6 +202,7 @@ function updateCarousel() {
     `;
   }
 
+  //reset carousel to beginning
   changeCarouselPage(0);
 }
 ////
@@ -301,3 +228,46 @@ if (window.matchMedia) {
 } else {
   light();
 }
+
+//ORDERED
+
+//get project data and display them in the carousel
+fetch("resources/projects.json")
+  .then((response) => response.json())
+  .then((json) => displayProjects(json))
+  .catch(console.error);
+function displayProjects(json) {
+  const projects = json.projects;
+
+  projects.forEach((element) => {
+    displayProject(element);
+  });
+  updateCarousel();
+}
+function displayProject(project) {
+  let card = `
+  <div class="project-card w-auto h-auto bg-none">
+    <img class="object-cover shadow-lg rounded-lg" src="${project.image}">
+    <div class="bg-none py-2">
+      <p class="text-secondary text-left text-sm drop-shadow-lg">${project.date}</p>
+      <p class="text-secondary text-left text-2xl drop-shadow-lgfont-bold">${project.title}</p>
+      <p class="text-quaternary drop-shadow-lg text-left text-sm">${project.description}</p>
+      <div class="tags">`;
+  for (let i = 0; i < project.tags.length; i++) {
+    card += `<div class="tag" onclick="tagClick(this)">${project.tags[i]}</div>`;
+  }
+  card += `</div>
+      <div class="flex justify-between m-4">`;
+  if (project.site) {
+    card += `<a class="text-secondary drop-shadow-lg" href="${project.site}">View Site <i class="fa fa-arrow-up-right-from-square"></i></a>`;
+  }
+  card += ` 
+        <a class="text-secondary drop-shadow-lg" href="${project.code}">View Code <i class="fa fa-code"></i></a>
+      </div>
+    </div>
+  </div>
+  `;
+  document.getElementById("projects-container").innerHTML += card;
+}
+
+updateScreenSize(window.matchMedia("(min-width: 1024px)"));
