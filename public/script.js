@@ -166,22 +166,6 @@ function changeCarouselPage(pageNum) {
   slidesContainer.scrollLeft = slideWidth * pageNum;
 }
 
-window.addEventListener("keydown", onKeyDown, false);
-function onKeyDown(event) {
-  var keyCode = event.keyCode;
-  switch (keyCode) {
-    case 68: //d
-      updateCarousel();
-      break;
-    case 83: //s
-      alert("Screen: " + screen.width);
-      //@media (min-width: 1024px)
-      break;
-    case 63: //a
-      break;
-  }
-}
-
 function updateCarousel() {
   //get number of projects being shown in carousel
   const nProjects = slidesContainer.querySelectorAll(
