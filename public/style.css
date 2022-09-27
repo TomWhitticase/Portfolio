@@ -1053,10 +1053,6 @@ footer {
   margin: 0.5rem;
 }
 
-.m-1 {
-  margin: 0.25rem;
-}
-
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1134,22 +1130,6 @@ footer {
   height: 1px;
 }
 
-.max-h-10 {
-  max-height: 2.5rem;
-}
-
-.max-h-40 {
-  max-height: 10rem;
-}
-
-.max-h-80 {
-  max-height: 20rem;
-}
-
-.max-h-60 {
-  max-height: 15rem;
-}
-
 .w-auto {
   width: auto;
 }
@@ -1174,20 +1154,16 @@ footer {
   width: 14rem;
 }
 
-.w-\[18rem\] {
-  width: 18rem;
-}
-
-.w-\[16rem\] {
-  width: 16rem;
+.w-\[24rem\] {
+  width: 24rem;
 }
 
 .w-\[20rem\] {
   width: 20rem;
 }
 
-.w-\[24rem\] {
-  width: 24rem;
+.w-\[18rem\] {
+  width: 18rem;
 }
 
 .-translate-x-\[50\%\] {
@@ -1413,20 +1389,8 @@ footer > * {
   margin: 1rem;
 }
 
-.child\:m-8 > * {
-  margin: 2rem;
-}
-
-.child\:m-10 > * {
-  margin: 2.5rem;
-}
-
 .child\:w-64 > * {
   width: 16rem;
-}
-
-.child\:w-52 > * {
-  width: 13rem;
 }
 
 .child\:flex-shrink-0 > * {
