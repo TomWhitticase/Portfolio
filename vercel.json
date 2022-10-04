@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "portfolio",
   "builds": [{ "src": "script.js", "use": "@vercel/node" }],
   "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
