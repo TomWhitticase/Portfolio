@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "name": "portfolio",
+  "builds": [{ "src": "script.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
+}
