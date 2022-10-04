@@ -1,0 +1,20 @@
+GET  http://localhost:5001/portfolio-b8a19/us-central1/api
+
+###
+POST http://localhost:5001/portfolio-b8a19/us-central1/api
+content-Type: application/json
+
+{
+    "name": "Tom",
+    "color": "blue"
+}
+
+
+###
+POST https://us-central1-portfolio-b8a19.cloudfunctions.net/api
+content-Type: application/json
+
+{
+    "name": "Tom",
+    "color": "blue"
+}

@@ -1,3 +1,19 @@
+function testApi() {
+  data = {
+    name: "Tom",
+    email: "wefew@wefewf.com",
+    message: "hi how aer you do!",
+  };
+  const url = "https://us-central1-portfolio-b8a19.cloudfunctions.net/test";
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  }).then((res) => {
+    console.log("Request complete! response:", res);
+  });
+}
+
 //screen size (desktop or mobile)
 let screenSize;
 function updateScreenSize(x) {
@@ -93,6 +109,10 @@ function menuClick() {
 //contact form send email
 const contactForm = document.getElementById("contact-form");
 contactForm.addEventListener("submit", (e) => {
+  //show loading animation
+  document.getElementById("send-email").classList.add("hidden");
+  document.getElementById("sending-email").classList.remove("hidden");
+
   e.preventDefault(); //prevent form submit
 
   //get form data for email
@@ -102,16 +122,20 @@ contactForm.addEventListener("submit", (e) => {
     message: contactForm.elements["message"].value,
   };
 
-  //send email
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "/");
   xhr.setRequestHeader("content-type", "application/json");
-  xhr.onload = function () {
+  xhr.onload = () => {
+    console.log(xhr.responseText);
     if (xhr.responseText == "success") {
       alert("Email sent");
     } else {
-      alert("Something went wrong! Email not sent.");
+      alert("something went wrong");
     }
+
+    //hide loading animation
+    document.getElementById("send-email").classList.remove("hidden");
+    document.getElementById("sending-email").classList.add("hidden");
   };
   xhr.send(JSON.stringify(formData));
 });
