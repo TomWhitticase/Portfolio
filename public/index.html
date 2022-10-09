@@ -23,7 +23,7 @@
 
   <body>
     <div
-      class="fixed bottom-4 left-4 w-10 h-10 rounded-lg bg-primary dark:bg-septary shadow-lg text-xl flex items-center justify-center z-50"
+      class="fixed bottom-4 left-4 w-10 h-10 rounded-lg bg-primary/70 dark:bg-septary shadow-lg text-xl flex items-center justify-center z-50"
     >
       <a href="javascript:toggleDark()"
         ><i id="toggleDark-icon" class="fa-regular fa-sun"></i
@@ -38,18 +38,19 @@
 
     <div
       id="header"
-      class="flex justify-between fixed top-0 w-full z-10 shadow-lg bg-primary/80 backdrop-blur-lg dark:bg-septary/80 h-20 p-2"
+      class="flex justify-between fixed top-0 w-full z-10 shadow-lg bg-primary/80 backdrop-blur-lg dark:bg-septary/80 h-16 p-2"
     >
       <a
         id="title"
         href=""
-        class="text-quinary dark:text-primary font-bold my-auto mx-2 text-3xl"
-        ><i class="fa fa-angle-left"></i>Tom Whitticase
-        /</i><i class="fa fa-angle-right"></i>
+        class="text-quinary dark:text-primary font-bold my-auto lg:mx-10 text-xl hover:text-secondary font-title"
+        ><i class="fa fa-angle-left text-octary"></i>Tom Whitticase
+        /</i><i class="fa fa-angle-right text-octary"></i>
       </a>
-      <div class="topnav hidden flex-row lg:flex p-4 my-auto">
+      <div class="topnav hidden flex-row lg:flex my-auto dark:text-primary">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
@@ -63,7 +64,7 @@
 
     <div
       id="topnav-mobile"
-      class="flex flex-col topnav-mobile topnav hidden lg:hidden bg-primary/80 backdrop-blur-lg dark:bg-septary/80 shadow-lg fixed w-full z-10 my-10"
+      class="flex flex-col topnav-mobile topnav hidden lg:hidden bg-primary/80 backdrop-blur-lg dark:text-primary dark:bg-septary/80 shadow-lg fixed w-full z-10 my-10"
     >
       <a href="#home" onclick="menuClick()">Home</a>
       <a href="#about" onclick="menuClick()">About</a>
@@ -71,78 +72,110 @@
       <a href="#projects" onclick="menuClick()">Projects</a>
     </div>
 
-    <div id="home" class="container">
-      <div class="flex flex-wrap just justify-center gap-10 lg:my-20">
+    <div id="home" class="container min-h-screen">
+      <div class="flex flex-row p-4 gap-20 flex-wrap justify-center">
         <!-- <div class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10">   -->
-        <div class="w-full lg:w-1/2">
-          <h2 class="p-4">Hello there!</h2>
+        <div class="w-auto p-4 flex flex-col items-start">
+          <h1 class="text-left">Hello there!</h1>
+          <h1 class="text-secondary text-left">I'm Tom.</h1>
           
-          <p class="my-auto">
-            I am a 2nd year Computer Science student at Loughborough University.
-            I love programming and have a wide range of skills including web
-            development, object oriented programming and embedded systems.
+          <p class="text-3xl text-left">
+            I am a <span class=" !text-octary">full stack</span> developer<span class="blink">|</span>
           </p>
 
+          <a href="#about">
+            <button class="btn2">
+              About Me <i class="fa fa-arrow-down mx-1"></i>
+            </button>
+          </a>
+          <div class="socials text-senary dark:text-nonary">
+            <a
+              href="https://www.linkedin.com/in/tom-whitticase/"
+              target="_blank"
+            >
+              <i
+                class="fa fa-linkedin-square drop-shadow-lg"
+              ></i>
+            </a>
+            <a href="https://github.com/TomWhitticase" target="_blank">
+              <i class="fa fa-github  drop-shadow-lg"></i>
+            </a>
+            <a href="mailto: tom.pe.wh@gmail.com" target="_blank">
+              <i class="fa fa-envelope drop-shadow-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/tom.p.w/" target="_blank">
+              <i class="fa fa-instagram drop-shadow-lg"></i>
+            </a>
+          </div>
+        </div>
+        <div class="my-auto mx-8">
+          <img
+            class="rounded-2xl shadow-lg object-cover w-72"
+            src="images/tombeachmalaga.jpg"
+          />
+        </div>
+        
+      </div>
+    </div>
+    <div id="about" class="bg-primary dark:bg-septary container">
+   <h2 class="">About me <i class="fa fa-person text-octary"></i></h2>
+      <div class="flex flex-row m-auto my-10 gap-20 flex-wrap justify-center">
+        
+        <div class="flex flex-row flex-wrap gap-20">
+            <img
+              class="object-cover w-52 lg:w-80 rounded-lg m-auto"
+              src="images/openday.jpg"
+            />
+            <div class="flex flex-col flex-start items-start">
+            <p class="w-80 p-4 text-left">I am a second year undergraduate Computer Science student studying at <a href="https://www.lboro.ac.uk/" target="_blank" class="text-secondary font-bold">Loughborough University</a> in the UK. I am passionate about programming and I am always teaching myself new skills. I am currently looking for a placement year starting summer 2023.</p>
+  
           <a download href="resources/tomwhitticaseresume.pdf">
             <button class="btn1">
               Resume &nbsp
               <i class="fa fa-download"></i>
             </button>
           </a>
-          <div class="socials">
-            <a
-              href="https://www.linkedin.com/in/tom-whitticase/"
-              target="_blank"
-            >
-              <i
-                class="fa fa-linkedin-square text-secondary drop-shadow-lg"
-              ></i>
-            </a>
-            <a href="https://github.com/TomWhitticase" target="_blank">
-              <i class="fa fa-github text-secondary drop-shadow-lg"></i>
-            </a>
-            <a href="mailto: tom.pe.wh@gmail.com" target="_blank">
-              <i class="fa fa-envelope text-secondary drop-shadow-lg"></i>
-            </a>
-            <a href="https://www.instagram.com/tom.p.w/" target="_blank">
-              <i class="fa fa-instagram text-secondary drop-shadow-lg"></i>
-            </a>
           </div>
-        </div>
-        <div class="hidden lg:block relative my-auto mx-8">
-          <img
-            class="rounded-lg object-cover w-24 lg:w-52"
-            src="images/tombeachmalaga.jpg"
-          />
-          <span
-            class="bg-secondary rounded-lg w-24 lg:w-52 h-full left-10 bottom-10 absolute -z-10"
-          ></span>
-          <span
-            class="bg-orange-500 rounded-lg w-24 lg:w-52 h-full left-20 bottom-20 absolute -z-20"
-          ></span>
-        </div>
-        <!-- <div class="relative inline-block">
-                    
-                    
-                </div> -->
+          </div>
       </div>
+          
     </div>
-    <div id="about" class="bg-primary dark:bg-septary">
-      <div class="container">
-        <div
-          class="my-10 mx-0 2xl:mx-10 flex flex-col lg:flex-row justify-center align-content-middle gap-10"
-        >
-          <div class="flex flex-col">
+    <div class="container">
+         <h2 class="">Personal Interests <i class="fa fa-heart text-octary"></i></h2>
+      <div class="flex flex-row m-auto my-10 gap-20 flex-wrap justify-center">
+        
+        <div class="flex flex-row flex-wrap gap-20">
             <img
               class="object-cover w-52 lg:w-80 rounded-lg m-auto"
-              src="images/openday.jpg"
+              src="images/topofmountain.jpg"
             />
-            <p>Some information about me lorem ipsum stuff bla bla bla bla.</p>
+            <div class="flex flex-col flex-start items-start">
+            <p class="w-80 p-4 text-left"> I love making and playing electric guitars. I enjoy skiing, climbing, and archery.</p>
+          
           </div>
+          </div>
+      </div>
 
-          <div>
-            <h1 class="text-center">Languages</h1>
-            <div class="skills">
+
+
+
+
+
+     
+    </div>
+    <div id="skills" class="bg-secondary dark:bg-septary">
+      <div class="container">
+
+
+
+        
+        <div
+          class=""
+        >
+
+            <div>
+            <h2 class="text-center p-4 text-primary">Languages</h2>
+            <div class="skills flex flex-row flex-wrap justify-center">
               <div class="skill">
                 <img src="images/html-5.png" />
                 <p>HTML</p>
@@ -180,9 +213,9 @@
                 <p>C#</p>
               </div>
             </div>
-
-            <h1 class="text-center">Frameworks</h1>
-            <div class="skills">
+</div><div>
+            <h2 class="text-center p-4 text-primary">Frameworks</h2>
+            <div class="skills flex flex-wrap justify-center">
               <div class="skill">
                 <img src="images/node-js.png" />
                 <p>Node.js</p>
@@ -204,9 +237,9 @@
                 <p>Bootstrap</p>
               </div>
             </div>
-
-            <h1 class="text-center">Tools</h1>
-            <div class="skills">
+</div><div>
+            <h2 class="text-center p-4 text-primary">Tools</h2>
+            <div class="skills flex flex-wrap justify-center">
               <div class="skill">
                 <img src="images/vscode.png" />
                 <p>VS Code</p>
@@ -214,6 +247,10 @@
               <div class="skill">
                 <img src="images/visualstudio.png" />
                 <p>Visual Studio</p>
+              </div>
+              <div class="skill">
+                <img src="images/firebase.png" />
+                <p>Firebase</p>
               </div>
               <div class="skill">
                 <img src="images/unity.png" />
@@ -236,29 +273,12 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div
-        class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10"
-      >
-        <div>
-          <h2>Personal Interests</h2>
-          <p class="my-auto">
-            I love skiing, hiking and exploring. I am passionate about music and
-            I enjoy building and playing guitars.
-          </p>
-        </div>
-
-        <img
-          class="w-56 h-full rounded-lg m-auto"
-          src="images/topofmountain.jpg"
-        />
-      </div>
-    </div>
+    
 
     <div id="projects" class="bg-primary dark:bg-septary">
-      <div class="text-center p-4">
+      <div class="container">
         <div class="m-auto">
-          <h2 class="m-4">Projects</h2>
+          <h2 class="m-4 text-senary">Projects <i class="fa fa-lightbulb text-octary"></i></h2>
           <p>Click a tag to only show relevant projects.</p>
         </div>
         <div>
@@ -306,7 +326,7 @@
     </div>
 
     <div id="contact" class="container">
-      <h2>Get in touch</h2>
+      <h2 class="text-senary">Get in touch <i class="fa-solid fa-handshake-simple text-octary"></i></h2>
       <form id="contact-form" method="POST">
         <div class="relative w-full lg:w-1/2 mx-auto my-4">
           <input
@@ -325,7 +345,7 @@
           <input
             type="email"
             name="emailAddress"
-            pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
+            
             required
             placeholder="Email Address"
             class="dark:bg-senary w-full p-2 pl-8"
@@ -378,6 +398,8 @@
       </a>
 
       <div class="w-auto mx-10 h-[1px] bg-senary"></div>
+      <h4><a href="#home" class="underline">Back to top</a></h4> 
+      
       <h4>
         Made with <i class="fa fa-heart mx-1"></i> by Tom Whitticase in
         Brockington, Loughborough University

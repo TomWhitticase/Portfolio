@@ -257,8 +257,8 @@ function displayProject(project) {
   <div class="project-card w-auto h-auto bg-none">
     <img class="object-cover shadow-lg rounded-lg" src="${project.image}">
     <div class="bg-none py-2">
-      <p class="text-secondary text-left text-sm drop-shadow-lg">${project.date}</p>
-      <p class="text-secondary text-left text-2xl drop-shadow-lgfont-bold">${project.title}</p>
+      <h3 class="text-secondary text-left text-sm drop-shadow-lg">${project.date}</h3>
+      <h2 class="text-secondary text-left text-2xl drop-shadow-lgfont-bold">${project.title}</h2>
       <p class="text-quaternary drop-shadow-lg text-left text-sm">${project.description}</p>
       <div class="tags">`;
   for (let i = 0; i < project.tags.length; i++) {

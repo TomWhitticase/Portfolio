@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+
 @layer components {
   #projects-container::-webkit-scrollbar {
     display: none;
@@ -16,22 +19,22 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-secondary rounded-lg drop-shadow-lg hover:bg-secondary/[85%] active:bg-secondary/70;
+    @apply bg-secondary rounded-lg shadow-lg hover:bg-secondary/[85%] active:bg-secondary/70;
   }
   h1 {
-    @apply text-3xl font-bold text-quinary dark:text-primary drop-shadow-lg;
+    @apply text-6xl font-bold text-quinary drop-shadow-lg font-title;
   }
   p {
-    @apply text-quaternary text-lg drop-shadow-lg;
+    @apply text-quaternary dark:text-nonary text-lg drop-shadow-lg font-body;
   }
   h2 {
-    @apply text-secondary font-bold text-4xl drop-shadow-lg;
+    @apply text-septary dark:text-primary font-bold text-4xl drop-shadow-lg font-title;
   }
   h3 {
-    @apply text-secondary font-bold text-2xl drop-shadow-lg;
+    @apply text-secondary font-bold text-2xl drop-shadow-lg font-title;
   }
   h4 {
-    @apply text-primary text-sm drop-shadow-lg;
+    @apply text-primary text-sm drop-shadow-lg font-title;
   }
 
   .btn1 {
@@ -41,26 +44,14 @@
     cursor: pointer;
   }
   .btn2 {
-    @apply text-secondary
-        hover:text-quaternary
-        border border-secondary
-        hover:bg-secondary
-        focus:outline-none
-        font-medium
-        rounded-lg
-        text-sm
-        px-5
-        py-2.5
-        text-center
-        mr-2
-        mb-2;
+    @apply btn1 rounded-full;
   }
 
   .topnav a {
-    @apply float-right dark:text-primary hover:scale-[1.05] active:scale-100 hover:text-secondary hover:underline decoration-2 dark:hover:text-secondary text-xl my-auto mx-8;
+    @apply font-bold float-right hover:scale-[1.05] active:scale-100 hover:text-secondary hover:underline decoration-2 text-lg my-auto mx-8;
     text-align: center;
   }
-  .topnav-mobile > a {
+  .topnav-mobile a {
     @apply float-none py-4 m-0 shadow hover:scale-100;
   }
 
@@ -69,7 +60,7 @@
   }
 
   .container {
-    @apply my-10 p-10 mx-auto md:mx-40 w-auto  text-center;
+    @apply py-20 mx-auto w-auto px-4  text-center;
     display: block;
   }
 
@@ -91,12 +82,11 @@
   }
 
   body {
-    @apply bg-primary pt-10 pb-40 bg-[url("images/mountains2.svg")] dark:bg-[url("images/layered-peaks-orange.svg")];
+    @apply bg-primary font-title pt-10 pb-40 bg-[url("images/mountains2.svg")] dark:bg-[url("images/layered-peaks-orange.svg")];
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    font-family: "Varela Round";
   }
   footer {
     @apply bg-quinary;
@@ -110,19 +100,14 @@
     text-align: center;
   }
 
-  .skills {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
   .skills > div > img {
     @apply w-8 m-auto;
   }
   .skills > div > p {
-    @apply text-sm text-quaternary text-center;
+    @apply text-sm text-primary text-center font-title;
   }
   .skills > div {
-    @apply bg-tertiary dark:bg-senary font-bold rounded-md text-base m-2 w-20 h-20 p-2;
+    @apply bg-green-800 font-bold rounded-md text-base m-2 w-20 h-20 p-2;
     display: flex;
     flex-direction: column;
     align-content: space-between;
@@ -132,13 +117,13 @@
     flex-wrap: wrap;
   }
   .tag {
-    @apply bg-tertiary cursor-pointer dark:bg-senary dark:text-quaternary text-quinary text-sm rounded-md p-2 m-1 shadow-lg;
+    @apply bg-tertiary cursor-pointer dark:bg-senary dark:text-primary text-quinary text-sm rounded-md p-2 m-1 shadow-lg;
   }
   .highlight-tag {
-    @apply bg-secondary scale-105 text-primary text-sm rounded-md p-2 m-1 shadow-lg;
+    @apply bg-secondary scale-105 dark:bg-secondary text-primary text-sm rounded-md p-2 m-1 shadow-lg;
   }
   .socials {
-    @apply text-secondary text-center text-xl p-4;
+    @apply text-secondary text-center text-3xl p-2;
   }
   .socials > a {
     @apply p-2;
@@ -179,5 +164,20 @@ footer > * {
     -webkit-transform: rotateY(0);
     transform: rotateY(0);
     opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink-animation 1s steps(2, start) infinite;
+  -webkit-animation: blink-animation 1s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
   }
 }
