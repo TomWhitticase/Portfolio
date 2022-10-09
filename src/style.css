@@ -22,7 +22,7 @@
     @apply bg-secondary rounded-lg shadow-lg hover:bg-secondary/[85%] active:bg-secondary/70;
   }
   h1 {
-    @apply text-6xl font-bold text-quinary drop-shadow-lg font-title;
+    @apply text-6xl font-bold text-quinary dark:text-primary drop-shadow-lg font-title;
   }
   p {
     @apply text-quaternary dark:text-nonary text-lg drop-shadow-lg font-body;
