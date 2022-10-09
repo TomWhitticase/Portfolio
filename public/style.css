@@ -994,6 +994,11 @@ footer {
   color: rgb(80 156 61 / var(--tw-text-opacity));
 }
 
+.dark .active-page {
+  --tw-text-opacity: 1 !important;
+  color: rgb(80 156 61 / var(--tw-text-opacity)) !important;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1491,6 +1496,14 @@ footer > * {
 .dark .dark\:bg-senary {
   --tw-bg-opacity: 1;
   background-color: rgb(85 85 85 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-septary\/70 {
+  background-color: rgb(52 52 52 / 0.7);
+}
+
+.dark .dark\:bg-septary\/90 {
+  background-color: rgb(52 52 52 / 0.9);
 }
 
 .dark .dark\:text-primary {

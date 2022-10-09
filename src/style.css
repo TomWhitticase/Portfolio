@@ -129,7 +129,7 @@
     @apply p-2;
   }
   .active-page {
-    @apply text-secondary font-bold;
+    @apply text-secondary dark:!text-secondary font-bold;
   }
 }
 

@@ -206,7 +206,9 @@ function updateCarousel() {
   pageNumbers.innerHTML = "";
   for (let i = 0; i < nPages; i++) {
     pageNumbers.innerHTML += `
-    <span id="carousel-page-number-${i}">${i + 1}</span>
+    <span id="carousel-page-number-${i}" class="dark:text-primary">${
+      i + 1
+    }</span>
     `;
   }
 
