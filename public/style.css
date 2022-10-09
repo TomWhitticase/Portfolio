@@ -1151,6 +1151,10 @@ footer {
   width: 100%;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-auto {
   width: auto;
 }
@@ -1159,12 +1163,16 @@ footer {
   width: 18rem;
 }
 
-.w-52 {
-  width: 13rem;
+.w-64 {
+  width: 16rem;
 }
 
 .w-80 {
   width: 20rem;
+}
+
+.w-52 {
+  width: 13rem;
 }
 
 .w-\[18rem\] {
@@ -1327,6 +1335,10 @@ footer {
   text-align: center;
 }
 
+.align-bottom {
+  vertical-align: bottom;
+}
+
 .font-title {
   font-family: Poppins, sans-serif;
 }
@@ -1369,9 +1381,9 @@ footer {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-octary {
-  --tw-text-opacity: 1;
-  color: rgb(232 133 4 / var(--tw-text-opacity));
+.\!text-secondary {
+  --tw-text-opacity: 1 !important;
+  color: rgb(80 156 61 / var(--tw-text-opacity)) !important;
 }
 
 .\!text-octary {
@@ -1384,6 +1396,11 @@ footer {
   color: rgb(85 85 85 / var(--tw-text-opacity));
 }
 
+.text-octary {
+  --tw-text-opacity: 1;
+  color: rgb(232 133 4 / var(--tw-text-opacity));
+}
+
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1392,11 +1409,6 @@ footer {
 .text-quaternary {
   --tw-text-opacity: 1;
   color: rgb(119 119 119 / var(--tw-text-opacity));
-}
-
-.\!text-secondary {
-  --tw-text-opacity: 1 !important;
-  color: rgb(80 156 61 / var(--tw-text-opacity)) !important;
 }
 
 .underline {
@@ -1489,26 +1501,22 @@ footer > * {
   flex-shrink: 0;
 }
 
-.dark .dark\:bg-septary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(52 52 52 / var(--tw-bg-opacity));
+.dark .dark\:bg-septary\/70 {
+  background-color: rgb(52 52 52 / 0.7);
 }
 
 .dark .dark\:bg-septary\/80 {
   background-color: rgb(52 52 52 / 0.8);
 }
 
+.dark .dark\:bg-septary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(52 52 52 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:bg-senary {
   --tw-bg-opacity: 1;
   background-color: rgb(85 85 85 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-septary\/70 {
-  background-color: rgb(52 52 52 / 0.7);
-}
-
-.dark .dark\:bg-septary\/90 {
-  background-color: rgb(52 52 52 / 0.9);
 }
 
 .dark .dark\:text-primary {

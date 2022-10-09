@@ -12,7 +12,8 @@
   "devDependencies": {
     "@vercel/node": "^2.5.18",
     "nodemon": "^2.0.20",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.4"
   },
   "description": "",
   "dependencies": {
@@ -25,6 +26,7 @@
     "nodemailer": "^6.8.0",
     "nodemailer-smtp-transport": "^2.7.4",
     "serverless": "^3.22.0",
-    "serverless-http": "^3.0.2"
+    "serverless-http": "^3.0.2",
+    "tsc": "^2.0.4"
   }
 }

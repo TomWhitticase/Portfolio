@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "none",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "sourceRoot": "/src",
+    "outDir": "/public"
+  },
+  "exclude": ["/node_modules"]
+}

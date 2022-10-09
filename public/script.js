@@ -1,21 +1,18 @@
-function testApi() {
-  data = {
-    name: "Tom",
-    email: "wefew@wefewf.com",
-    message: "hi how aer you do!",
+var __spreadArray =
+  (this && this.__spreadArray) ||
+  function (to, from, pack) {
+    if (pack || arguments.length === 2)
+      for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+          ar[i] = from[i];
+        }
+      }
+    return to.concat(ar || Array.prototype.slice.call(from));
   };
-  const url = "https://us-central1-portfolio-b8a19.cloudfunctions.net/test";
-  fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  }).then((res) => {
-    console.log("Request complete! response:", res);
-  });
-}
 
 //screen size (desktop or mobile)
-let screenSize;
+var screenSize = "desktop";
 function updateScreenSize(x) {
   if (x.matches) {
     // If media query matches
@@ -28,48 +25,42 @@ function updateScreenSize(x) {
 window
   .matchMedia("(min-width: 1024px)")
   .addEventListener("change", updateScreenSize);
-
-window.onscroll = () => {
-  let elements = document.getElementsByClassName("top-only");
-
+window.onscroll = function () {
+  var elements = document.getElementsByClassName("top-only");
   if (window.scrollY != 0) {
-    for (let i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
       elements[i].classList.add("hidden");
     }
   } else {
-    for (let i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
       elements[i].classList.remove("hidden");
     }
   }
 };
-
 function tagClick(tag) {
   //get if tag was highlighted or not
-  const highlighted = tag.classList.contains("highlight-tag");
-
+  var highlighted = tag.classList.contains("highlight-tag");
   //get all tags matching tag clicked
-  let allTags = [...document.getElementsByClassName("tag")];
-  let tags = [];
-  for (let i = 0; i < allTags.length; i++) {
+  var allTags = __spreadArray([], document.getElementsByClassName("tag"), true);
+  var tags = [];
+  for (var i = 0; i < allTags.length; i++) {
     if (tag.innerHTML == allTags[i].innerHTML) {
       tags.push(allTags[i]);
     }
   }
-
   //toggle tags highlight
-  for (let i = 0; i < tags.length; i++) {
+  for (var i = 0; i < tags.length; i++) {
     if (highlighted) tags[i].classList.remove("highlight-tag");
     else {
       tags[i].classList.add("highlight-tag");
     }
   }
-
   //only show cards containing highlighted tags
-  const cards = document.getElementsByClassName("project-card");
-  for (let i = 0; i < cards.length; i++) {
-    let projectTags = cards[i].querySelectorAll(":scope > div > .tags > .tag");
-    let containsHighlightedTag = false;
-    for (let j = 0; j < projectTags.length; j++) {
+  var cards = document.getElementsByClassName("project-card");
+  for (var i = 0; i < cards.length; i++) {
+    var projectTags = cards[i].querySelectorAll(":scope > div > .tags > .tag");
+    var containsHighlightedTag = false;
+    for (var j = 0; j < projectTags.length; j++) {
       if (projectTags[j].classList.contains("highlight-tag")) {
         containsHighlightedTag = true;
       }
@@ -80,74 +71,91 @@ function tagClick(tag) {
       cards[i].classList.add("hidden");
     }
   }
-
   //if no tags highlighted then show all projects
-  let nTags = document.querySelectorAll(".highlight-tag").length;
+  var nTags = document.querySelectorAll(".highlight-tag").length;
   if (nTags == 0) {
-    for (let i = 0; i < cards.length; i++) {
+    for (var i = 0; i < cards.length; i++) {
       cards[i].classList.remove("hidden");
     }
   }
-
   updateCarousel();
 }
-
 function menuClick() {
-  let nav = document.getElementById("topnav-mobile");
-  let icon = document.getElementById("menu-icon");
-  if (nav.classList.contains("hidden")) {
+  var nav = document.getElementById("topnav-mobile");
+  var icon = document.getElementById("menu-icon");
+  if (
+    nav === null || nav === void 0 ? void 0 : nav.classList.contains("hidden")
+  ) {
     nav.classList.remove("hidden");
-    icon.classList.add("fa-close");
-    icon.classList.remove("fa-bars");
+    icon === null || icon === void 0 ? void 0 : icon.classList.add("fa-close");
+    icon === null || icon === void 0
+      ? void 0
+      : icon.classList.remove("fa-bars");
   } else {
-    nav.classList.add("hidden");
-    icon.classList.remove("fa-close");
-    icon.classList.add("fa-bars");
+    nav === null || nav === void 0 ? void 0 : nav.classList.add("hidden");
+    icon === null || icon === void 0
+      ? void 0
+      : icon.classList.remove("fa-close");
+    icon === null || icon === void 0 ? void 0 : icon.classList.add("fa-bars");
   }
 }
-
 //contact form send email
-const contactForm = document.getElementById("contact-form");
-contactForm.addEventListener("submit", (e) => {
-  //show loading animation
-  document.getElementById("send-email").classList.add("hidden");
-  document.getElementById("sending-email").classList.remove("hidden");
-
-  e.preventDefault(); //prevent form submit
-
-  //get form data for email
-  let formData = {
-    name: contactForm.elements["name"].value,
-    emailAddress: contactForm.elements["emailAddress"].value,
-    message: contactForm.elements["message"].value,
-  };
-
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", "/");
-  xhr.setRequestHeader("content-type", "application/json");
-  xhr.onload = () => {
-    console.log(xhr.responseText);
-    if (xhr.responseText == "success") {
-      alert("Email sent");
-    } else {
-      alert("something went wrong");
-    }
-
-    //hide loading animation
-    document.getElementById("send-email").classList.remove("hidden");
-    document.getElementById("sending-email").classList.add("hidden");
-  };
-  xhr.send(JSON.stringify(formData));
-});
-
+var contactForm = document.getElementById("contact-form");
+contactForm === null || contactForm === void 0
+  ? void 0
+  : contactForm.addEventListener("submit", function (e) {
+      var _a, _b;
+      //show loading animation
+      (_a =
+        document === null || document === void 0
+          ? void 0
+          : document.getElementById("send-email")) === null || _a === void 0
+        ? void 0
+        : _a.classList.add("hidden");
+      (_b =
+        document === null || document === void 0
+          ? void 0
+          : document.getElementById("sending-email")) === null || _b === void 0
+        ? void 0
+        : _b.classList.remove("hidden");
+      e.preventDefault(); //prevent form submit
+      //get form data for email
+      var formData = {
+        name: document.getElementById("name").value,
+        emailAddress: document.getElementById("emailAddress").value,
+        message: document.getElementById("message").value,
+      };
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/");
+      xhr.setRequestHeader("content-type", "application/json");
+      xhr.onload = function () {
+        var _a, _b;
+        console.log(xhr.responseText);
+        if (xhr.responseText == "success") {
+          alert("Email sent");
+        } else {
+          alert("something went wrong");
+        }
+        //hide loading animation
+        (_a = document.getElementById("send-email")) === null || _a === void 0
+          ? void 0
+          : _a.classList.remove("hidden");
+        (_b = document.getElementById("sending-email")) === null ||
+        _b === void 0
+          ? void 0
+          : _b.classList.add("hidden");
+      };
+      xhr.send(JSON.stringify(formData));
+    });
 function dark() {
   document.getElementsByTagName("html")[0].className = "dark";
-  document.getElementById("toggleDark-icon").className =
-    "fa fa-moon text-primary";
+  var icon = document.getElementById("toggleDark-icon");
+  if (icon) icon.className = "fa fa-moon text-primary";
 }
 function light() {
   document.getElementsByTagName("html")[0].className = "";
-  document.getElementById("toggleDark-icon").className = "fa-regular fa-sun";
+  var icon = document.getElementById("toggleDark-icon");
+  if (icon) icon.className = "fa-regular fa-sun";
 }
 function toggleDark() {
   if (document.getElementsByTagName("html")[0].className == "dark") {
@@ -156,72 +164,74 @@ function toggleDark() {
     dark();
   }
 }
-
 //carousel stuff//
-const slidesContainer = document.getElementById("projects-container");
-const prevButton = document.getElementById("slide-prev");
-const nextButton = document.getElementById("slide-next");
-let pageActive = 1;
-let nPages;
-
-nextButton.addEventListener("click", () => {
-  changeCarouselPage(pageActive + 1);
-});
-prevButton.addEventListener("click", () => {
-  changeCarouselPage(pageActive - 1);
-});
-
+var slidesContainer = document.getElementById("projects-container");
+var prevButton = document.getElementById("slide-prev");
+var nextButton = document.getElementById("slide-next");
+var pageActive = 1;
+var nPages = 0;
+nextButton === null || nextButton === void 0
+  ? void 0
+  : nextButton.addEventListener("click", function () {
+      changeCarouselPage(pageActive + 1);
+    });
+prevButton === null || prevButton === void 0
+  ? void 0
+  : prevButton.addEventListener("click", function () {
+      changeCarouselPage(pageActive - 1);
+    });
 function changeCarouselPage(pageNum) {
   if (pageNum < 0) pageNum = nPages - 1;
   if (pageNum > nPages - 1) pageNum = 0;
   pageActive = pageNum;
-
   //change page number indicator
-  const pageNumbers = document.getElementById("carousel-page-numbers");
-  for (let i = 0; i < pageNumbers.children.length; i++) {
-    pageNumbers.children[i].classList.remove("active-page");
-    if (pageNumbers.children[i].id == "carousel-page-number-" + pageActive) {
-      pageNumbers.children[i].classList.add("active-page");
+  var pageNumbers = document.getElementById("carousel-page-numbers");
+  if (pageNumbers) {
+    for (var i = 0; i < pageNumbers.children.length; i++) {
+      pageNumbers.children[i].classList.remove("active-page");
+      if (pageNumbers.children[i].id == "carousel-page-number-" + pageActive) {
+        pageNumbers.children[i].classList.add("active-page");
+      }
     }
   }
-
   //scroll carousel to new position
-  const slideWidth = slidesContainer.offsetWidth;
-  slidesContainer.scrollLeft = slideWidth * pageNum;
+  var slideWidth =
+    slidesContainer === null || slidesContainer === void 0
+      ? void 0
+      : slidesContainer.offsetWidth;
+  if (slidesContainer && slideWidth)
+    slidesContainer.scrollLeft = slideWidth * pageNum;
 }
-
 function updateCarousel() {
   //get number of projects being shown in carousel
-  const nProjects = slidesContainer.querySelectorAll(
-    ":scope > :not(.hidden)"
-  ).length;
-
+  var nProjects = 0;
+  if (slidesContainer)
+    nProjects = slidesContainer.querySelectorAll(
+      ":scope > :not(.hidden)"
+    ).length;
   //set number of pages carousel will have
   nPages;
   if (screenSize == "desktop") nPages = Math.ceil(nProjects / 3); //3 projects per page
   if (screenSize == "mobile") nPages = nProjects; //1 project per page
-
   //setup page numbering html elements
-  const pageNumbers = document.getElementById("carousel-page-numbers");
-  pageNumbers.innerHTML = "";
-  for (let i = 0; i < nPages; i++) {
-    pageNumbers.innerHTML += `
-    <span id="carousel-page-number-${i}" class="dark:text-primary">${
-      i + 1
-    }</span>
-    `;
+  var pageNumbers = document.getElementById("carousel-page-numbers");
+  if (pageNumbers) {
+    pageNumbers.innerHTML = "";
+    for (var i = 0; i < nPages; i++) {
+      pageNumbers.innerHTML += '\n    <span id="carousel-page-number-'
+        .concat(i, '" class="dark:text-primary">')
+        .concat(i + 1, "</span>\n    ");
+    }
   }
-
   //reset carousel to beginning
   changeCarouselPage(0);
 }
 ////
-
 //detect light/dark mode preference changes
 window
   .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", (e) => {
-    const colorScheme = e.matches ? "dark" : "light";
+  .addEventListener("change", function (e) {
+    var colorScheme = e.matches ? "dark" : "light";
     if (colorScheme === "dark") {
       dark();
     } else {
@@ -238,46 +248,56 @@ if (window.matchMedia) {
 } else {
   light();
 }
-
 //ORDERED
-
 //get project data and display them in the carousel
 fetch("resources/projects.json")
-  .then((response) => response.json())
-  .then((json) => displayProjects(json))
-  .catch(console.error);
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (json) {
+    return displayProjects(json);
+  })
+  ["catch"](console.error);
 function displayProjects(json) {
-  const projects = json.projects;
-
-  projects.forEach((element) => {
+  var projects = json.projects;
+  projects.forEach(function (element) {
     displayProject(element);
   });
   updateCarousel();
 }
 function displayProject(project) {
-  let card = `
-  <div class="project-card w-auto h-auto bg-none">
-    <img class="object-cover shadow-lg rounded-lg" src="${project.image}">
-    <div class="bg-none py-2">
-      <h3 class="text-secondary text-left text-sm drop-shadow-lg">${project.date}</h3>
-      <h2 class="text-secondary text-left text-2xl drop-shadow-lgfont-bold">${project.title}</h2>
-      <p class="text-quaternary drop-shadow-lg text-left text-sm">${project.description}</p>
-      <div class="tags">`;
-  for (let i = 0; i < project.tags.length; i++) {
-    card += `<div class="tag" onclick="tagClick(this)">${project.tags[i]}</div>`;
+  var card =
+    '\n  <div class="project-card w-auto h-auto bg-none">\n    <img class="object-cover shadow-lg rounded-lg" src="'
+      .concat(
+        project.image,
+        '">\n    <div class="bg-none py-2">\n      <h3 class="text-secondary text-left text-sm drop-shadow-lg">'
+      )
+      .concat(
+        project.date,
+        '</h3>\n      <h2 class="text-secondary text-left text-2xl drop-shadow-lgfont-bold">'
+      )
+      .concat(
+        project.title,
+        '</h2>\n      <p class="text-quaternary drop-shadow-lg text-left text-sm">'
+      )
+      .concat(project.description, '</p>\n      <div class="tags">');
+  for (var i = 0; i < project.tags.length; i++) {
+    card += '<div class="tag" onclick="tagClick(this)">'.concat(
+      project.tags[i],
+      "</div>"
+    );
   }
-  card += `</div>
-      <div class="flex justify-between m-4">`;
+  card += '</div>\n      <div class="flex justify-between m-4">';
   if (project.site) {
-    card += `<a class="text-secondary drop-shadow-lg" href="${project.site}">View Site <i class="fa fa-arrow-up-right-from-square"></i></a>`;
+    card += '<a class="text-secondary drop-shadow-lg" href="'.concat(
+      project.site,
+      '">View Site <i class="fa fa-arrow-up-right-from-square"></i></a>'
+    );
   }
-  card += ` 
-        <a class="text-secondary drop-shadow-lg" href="${project.code}">View Code <i class="fa fa-code"></i></a>
-      </div>
-    </div>
-  </div>
-  `;
-  document.getElementById("projects-container").innerHTML += card;
+  card += ' \n        <a class="text-secondary drop-shadow-lg" href="'.concat(
+    project.code,
+    '">View Code <i class="fa fa-code"></i></a>\n      </div>\n    </div>\n  </div>\n  '
+  );
+  var projectsContainer = document.getElementById("projects-container");
+  if (projectsContainer) projectsContainer.innerHTML += card;
 }
-
-updateScreenSize(window.matchMedia("(min-width: 1024px)"));
