@@ -1394,6 +1394,11 @@ footer {
   color: rgb(119 119 119 / var(--tw-text-opacity));
 }
 
+.\!text-secondary {
+  --tw-text-opacity: 1 !important;
+  color: rgb(80 156 61 / var(--tw-text-opacity)) !important;
+}
+
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
