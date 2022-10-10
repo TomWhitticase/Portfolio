@@ -214,7 +214,7 @@ function displayProject(project) {
   card += `
                 </div>
             </div>
-            <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-b from-gray-800/50 via-transparent to-transparent">
+            <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-b from-gray-600/40 via-transparent to-gray-600/40">
             </div>
             <div class="card__overlay">
                 <div class="card__header">

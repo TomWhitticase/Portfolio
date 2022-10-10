@@ -1313,6 +1313,60 @@ footer {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-gray-800\/20 {
+  --tw-gradient-from: rgb(31 41 55 / 0.2);
+  --tw-gradient-to: rgb(31 41 55 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-gray-100\/20 {
+  --tw-gradient-from: rgb(243 244 246 / 0.2);
+  --tw-gradient-to: rgb(243 244 246 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-gray-300\/20 {
+  --tw-gradient-from: rgb(209 213 219 / 0.2);
+  --tw-gradient-to: rgb(209 213 219 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-gray-300\/30 {
+  --tw-gradient-from: rgb(209 213 219 / 0.3);
+  --tw-gradient-to: rgb(209 213 219 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-gray-300\/40 {
+  --tw-gradient-from: rgb(209 213 219 / 0.4);
+  --tw-gradient-to: rgb(209 213 219 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-gray-500\/40 {
+  --tw-gradient-from: rgb(107 114 128 / 0.4);
+  --tw-gradient-to: rgb(107 114 128 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-gray-500\/20 {
+  --tw-gradient-from: rgb(107 114 128 / 0.2);
+  --tw-gradient-to: rgb(107 114 128 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-gray-600\/40 {
+  --tw-gradient-from: rgb(75 85 99 / 0.4);
+  --tw-gradient-to: rgb(75 85 99 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-white\/40 {
+  --tw-gradient-from: rgb(255 255 255 / 0.4);
+  --tw-gradient-to: rgb(255 255 255 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-transparent {
   --tw-gradient-to: rgb(0 0 0 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to);
@@ -1320,6 +1374,46 @@ footer {
 
 .to-transparent {
   --tw-gradient-to: transparent;
+}
+
+.to-gray-800\/50 {
+  --tw-gradient-to: rgb(31 41 55 / 0.5);
+}
+
+.to-gray-800\/20 {
+  --tw-gradient-to: rgb(31 41 55 / 0.2);
+}
+
+.to-gray-500\/20 {
+  --tw-gradient-to: rgb(107 114 128 / 0.2);
+}
+
+.to-gray-100\/20 {
+  --tw-gradient-to: rgb(243 244 246 / 0.2);
+}
+
+.to-gray-300\/20 {
+  --tw-gradient-to: rgb(209 213 219 / 0.2);
+}
+
+.to-gray-300\/30 {
+  --tw-gradient-to: rgb(209 213 219 / 0.3);
+}
+
+.to-gray-300\/40 {
+  --tw-gradient-to: rgb(209 213 219 / 0.4);
+}
+
+.to-gray-500\/40 {
+  --tw-gradient-to: rgb(107 114 128 / 0.4);
+}
+
+.to-gray-600\/40 {
+  --tw-gradient-to: rgb(75 85 99 / 0.4);
+}
+
+.to-white\/40 {
+  --tw-gradient-to: rgb(255 255 255 / 0.4);
 }
 
 .fill-slate-400 {
