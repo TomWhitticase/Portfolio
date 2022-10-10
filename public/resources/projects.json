@@ -2,7 +2,7 @@
   "projects": [
     {
       "title": "Planner",
-      "date": "September 2022",
+      "date": "2022-09",
       "image": "images/planner.webp",
       "description": "A web app for keeping track of meetings.",
       "tags": ["React", "JavaScript", "Tailwind"],
@@ -11,15 +11,15 @@
     },
     {
       "title": "Adventure Game",
-      "date": "October 2019",
+      "date": "2019-10",
       "image": "images/adventureGame.webp",
       "description": "An 2D sandbox game featuring procedurally generated tile terrain, building, mining, crafting NPCs with pathfinding and combat. Created for my A-Level CS Coursework",
       "tags": ["C#", "Unity"],
-      "code": "https://github.com/TomWhitticase/AdventureGame"
+      "code": ""
     },
     {
       "title": "Word Guess",
-      "date": "August 2022",
+      "date": "2022-08",
       "image": "images/wordGuess.webp",
       "description": "A wordle clone with some extra features.",
       "tags": ["HTML", "CSS", "JavaScript", "API"],
@@ -28,7 +28,7 @@
     },
     {
       "title": "Word Finder",
-      "date": "August 2022",
+      "date": "2022-08",
       "image": "images/wordFinder.webp",
       "description": "A website that helps you solve wordles.",
       "tags": ["HTML", "CSS", "JavaScript", "API"],
@@ -37,7 +37,7 @@
     },
     {
       "title": "Wedding Venue Finder",
-      "date": "April 2022",
+      "date": "2022-04",
       "image": "images/weddingVenues.webp",
       "description": "A website for searching for a wedding venue.",
       "tags": ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
@@ -46,7 +46,7 @@
     },
     {
       "title": "Computer Accessories Shop",
-      "date": "May 2022",
+      "date": "2022-05",
       "image": "images/computerAccessoriesShop.webp",
       "description": "An application for customers to buy devices and admins to manage stock.",
       "tags": ["Java", "Eclipse"],
@@ -54,7 +54,7 @@
     },
     {
       "title": "Library Book Loans ",
-      "date": "December 2022",
+      "date": "2021-12",
       "image": "images/librarySystem.webp",
       "description": "An application for librarians to manage book loans and analyze trends to give personalised book reccomendations.",
       "tags": ["Python", "Tkinter", "Matplotlib"],
@@ -62,7 +62,7 @@
     },
     {
       "title": "Data Channel Monitor",
-      "date": "May 2022",
+      "date": "2022-05",
       "image": "images/arduino.webp",
       "description": "An arduino program for displaying and interacting with data channels using an lcd screen and buttons.",
       "tags": ["C++", "Arduino"],
