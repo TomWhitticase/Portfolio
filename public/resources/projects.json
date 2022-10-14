@@ -67,6 +67,15 @@
       "description": "An arduino program for displaying and interacting with data channels using an lcd screen and buttons.",
       "tags": ["C++", "Arduino"],
       "code": "https://github.com/TomWhitticase/DataMonitor"
+    },
+    {
+      "title": "CPU-S Simulator",
+      "date": "2022-09",
+      "image": "images/cpu-s-simulator.png",
+      "description": "A web app that simulates a basic CPU and allows you to write and run assembly code",
+      "tags": ["HTML", "Tailwind", "JavaScript"],
+      "site": "https://tomwhitticase.github.io/CPU-S-Simulator/",
+      "code": "https://github.com/TomWhitticase/CPU-S-Simulator"
     }
   ]
 }
