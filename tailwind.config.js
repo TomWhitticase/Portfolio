@@ -15,6 +15,7 @@ module.exports = {
         septary: "#343434",
         octary: "#e88504",
         nonary: "#aaaaaa",
+        decary: "#444444",
       },
       fontFamily: {
         title: ["Poppins", "sans-serif"],

@@ -70,7 +70,9 @@
     </div>
 
     <div id="home" class="container min-h-screen">
-      <div class="flex flex-row p-4 gap-20 flex-wrap justify-center">
+      <div
+        class="flex flex-row p-4 gap-20 flex-wrap justify-center items-center"
+      >
         <!-- <div class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10">   -->
         <div class="w-auto p-4 flex flex-col items-start">
           <h1 class="text-left">Hello there!</h1>
@@ -114,35 +116,37 @@
         </div>
       </div>
     </div>
-    <div id="about" class="bg-primary dark:bg-septary container">
-      <h2 class="">About me <i class="fa fa-person text-octary"></i></h2>
-      <div class="flex flex-row m-auto my-10 gap-10 flex-wrap justify-center">
-        <div class="flex flex-row flex-wrap gap-10">
-          <img
-            class="object-cover w-64 lg:w-80 rounded-lg m-auto"
-            src="images/openday.jpg"
-          />
-          <div class="flex flex-col flex-start items-start">
-            <p class="w-80 p-4 text-left">
-              I am a second year undergraduate Computer Science student studying
-              at
-              <a
-                href="https://www.lboro.ac.uk/"
-                target="_blank"
-                class="text-secondary font-bold"
-                >Loughborough University</a
-              >
-              in the UK. I am passionate about programming and I am always
-              teaching myself new skills. I am currently looking for a placement
-              year starting summer 2023.
-            </p>
+    <div id="about" class="bg-primary dark:bg-septary">
+      <div class="container">
+        <h2 class="">About me <i class="fa fa-person text-octary"></i></h2>
+        <div class="flex flex-row m-auto my-10 gap-10 flex-wrap justify-center">
+          <div class="flex flex-row flex-wrap gap-10">
+            <img
+              class="object-cover w-64 lg:w-80 rounded-lg m-auto"
+              src="images/openday.jpg"
+            />
+            <div class="flex flex-col flex-start items-start">
+              <p class="w-80 p-4 text-left">
+                I am a second year undergraduate Computer Science student
+                studying at
+                <a
+                  href="https://www.lboro.ac.uk/"
+                  target="_blank"
+                  class="text-secondary font-bold"
+                  >Loughborough University</a
+                >
+                in the UK. I am passionate about programming and I am always
+                teaching myself new skills. I am currently looking for a
+                placement year starting summer 2023.
+              </p>
 
-            <a download href="resources/tomwhitticaseresume.pdf">
-              <button class="btn1">
-                Resume &nbsp
-                <i class="fa fa-download"></i>
-              </button>
-            </a>
+              <a download href="resources/tomwhitticaseresume.pdf">
+                <button class="btn1">
+                  Resume &nbsp
+                  <i class="fa fa-download"></i>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -276,10 +280,10 @@
       </div>
     </div>
 
-    <div id="projects" class="bg-primary dark:bg-septary">
+    <div id="projects" class="bg-primary dark:bg-decary">
       <div class="container">
         <div class="m-auto">
-          <h2 class="m-4 text-senary">
+          <h2 class="m-4 p-4 text-senary">
             Projects <i class="fa fa-lightbulb text-octary"></i>
           </h2>
         </div>
@@ -306,7 +310,7 @@
             id="name"
             required
             placeholder="Name"
-            class="dark:bg-senary w-full p-2 pl-8"
+            class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
           />
           <i
             class="fa-solid fa-user absolute top-[50%] -translate-y-[50%] left-2 z-1"
@@ -319,7 +323,7 @@
             id="emailAddress"
             required
             placeholder="Email Address"
-            class="dark:bg-senary w-full p-2 pl-8"
+            class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
           />
           <i
             class="fa-solid fa-at absolute top-[50%] -translate-y-[50%] left-2 z-1"
@@ -333,7 +337,7 @@
             rows="4"
             required
             placeholder="Message"
-            class="dark:bg-senary w-full p-2 pl-8"
+            class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
           ></textarea>
           <i class="fa-solid fa-message absolute top-4 left-2 z-1"></i>
         </div>
