@@ -107,13 +107,13 @@
   }
 
   .skills > div > img {
-    @apply w-8 m-auto;
+    @apply w-8 m-auto drop-shadow;
   }
   .skills > div > p {
     @apply text-sm text-primary text-center font-title;
   }
   .skills > div {
-    @apply bg-green-800 font-bold rounded-md text-base m-2 w-20 h-20 p-2;
+    @apply bg-eleventhry font-bold rounded-md text-base m-2 w-20 h-20 p-2;
     display: flex;
     flex-direction: column;
     align-content: space-between;
@@ -145,6 +145,12 @@
 
   .card:hover .card__overlay {
     transform: translateY(0);
+  }
+  .card:hover .tag {
+    visibility: visible;
+  }
+  .tag {
+    visibility: hidden;
   }
 
   .card__header {

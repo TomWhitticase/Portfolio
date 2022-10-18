@@ -203,12 +203,12 @@ function displayProjects(json) {
 function displayProject(project) {
   let card = `
         <div class="card shadow-lg rounded-lg relative overflow-hidden w-64 lg:w-96 aspect-square">
-            <img src ="${project.image}" class="object-cover" alt="" />
+            <img src ="${project.image}" class="object-cover w-full h-[80%]" alt="" />
             <div class="absolute top-0">
                 <div class="flex flex-wrap gap-2 p-2 child:text-xs child:z-[2] child:bg-octary child:text-primary child:shadow-lg child:rounded-md child:p-2">
                     `;
   for (let i = 0; i < project.tags.length; i++) {
-    card += `<span>${project.tags[i]}</span>`;
+    card += `<span class="tag">${project.tags[i]}</span>`;
   }
 
   card += `
@@ -223,7 +223,7 @@ function displayProject(project) {
                         <h3 class= "text-left">${project.title}</h3>
                     </div >
                 </div >
-            <p class="text-left p-2 text-xs font-body">
+            <p class="text-left p-4 text-xs font-body">
                     ${project.description}
         <div class="flex justify-between p-4">`;
   if (project.site) {

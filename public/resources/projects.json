@@ -5,7 +5,7 @@
       "date": "2022-09",
       "image": "images/planner.webp",
       "description": "A web app for keeping track of meetings.",
-      "tags": ["React", "JavaScript", "Tailwind"],
+      "tags": ["React", "JavaScript", "TailwindCSS"],
       "site": "https://tomwhitticase.github.io/Planner/",
       "code": "https://github.com/TomWhitticase/Planner"
     },
@@ -73,7 +73,7 @@
       "date": "2022-09",
       "image": "images/cpu-s-simulator.png",
       "description": "A web app that simulates a basic CPU and allows you to write and run assembly code",
-      "tags": ["HTML", "Tailwind", "JavaScript"],
+      "tags": ["HTML", "TailwindCSS", "JavaScript"],
       "site": "https://tomwhitticase.github.io/CPU-S-Simulator/",
       "code": "https://github.com/TomWhitticase/CPU-S-Simulator"
     }
