@@ -123,7 +123,7 @@ contactForm === null || contactForm === void 0
         message: document.getElementById("message").value,
       };
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "/");
+      xhr.open("POST", "https://portfolio-backend-self.vercel.app/");
       xhr.setRequestHeader("content-type", "application/json");
       xhr.onload = function () {
         let _a, _b;
@@ -249,3 +249,14 @@ function exit(element, animationClass) {
     element.classList.add("hidden");
   }, 500);
 }
+
+fetch("https://portfolio-backend-self.vercel.app/index.js", {
+  mode: "cors",
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+  },
+  method: "POST",
+  body: JSON.stringify({ a: 1, b: 2 }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
