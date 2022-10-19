@@ -257,4 +257,4 @@ fetch("https://portfolio-backend-self.vercel.app/index.js", {
   },
   method: "POST",
   body: JSON.stringify({ a: 1, b: 2 }),
-}).then((data) => console.log(data));
+}).then((res) => console.log(res.body));
