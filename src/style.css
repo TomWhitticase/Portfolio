@@ -59,18 +59,17 @@
   .topnav-mobile a {
     @apply float-none py-4 m-0 shadow;
   }
-  a {
+  .topnav a {
     position: relative;
-    color: #000;
+
     text-decoration: none;
   }
 
-  a:hover {
-    color: #000;
+  .topnav a:hover {
     @apply scale-105;
   }
 
-  a::before {
+  .topnav a::before {
     content: "";
     position: absolute;
     display: block;

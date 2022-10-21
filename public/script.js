@@ -241,7 +241,7 @@ function updateSelectedTab() {
       break;
     }
   }
-  console.log("Selected id: " + selectedTabId);
+
   for (let i = 0; i < topnavs.length; i++) {
     for (let j = 0; j < topnavs[i].children.length; j++) {
       const navButton = topnavs[i].children[j];
@@ -254,6 +254,8 @@ function updateSelectedTab() {
     }
   }
 }
+
+updateSelectedTab();
 
 fetch("https://portfolio-backend-self.vercel.app/index.js", {
   mode: "cors",
