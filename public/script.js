@@ -223,15 +223,16 @@ function checkVisible(elm, evalType) {
 }
 
 //highlight nav tab
+const topnavs = document.getElementsByClassName("topnav");
+let tabs = [];
+const navButtons = topnavs[0].children;
+for (let j = 0; j < navButtons.length; j++) {
+  tabs.push(document.getElementById(navButtons[j].href.split("#")[1]));
+}
 window.addEventListener("scroll", () => {
-  const topnavs = document.getElementsByClassName("topnav");
-  const tabs = [];
-
-  const navButtons = topnavs[0].children;
-  for (let j = 0; j < navButtons.length; j++) {
-    tabs.push(document.getElementById(navButtons[j].href.split("#")[1]));
-  }
-
+  updateSelectedTab();
+});
+function updateSelectedTab() {
   let selectedTabId;
   for (let i = 0; i < tabs.length; i++) {
     const tab = tabs[i];
@@ -252,7 +253,7 @@ window.addEventListener("scroll", () => {
       }
     }
   }
-});
+}
 
 fetch("https://portfolio-backend-self.vercel.app/index.js", {
   mode: "cors",

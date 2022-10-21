@@ -54,18 +54,44 @@
   }
 
   .topnav a {
-    @apply font-bold float-right hover:scale-[1.05] active:scale-100 hover:text-secondary hover:underline decoration-2 text-lg my-auto mx-8;
-    text-align: center;
+    @apply font-bold text-center float-right text-lg my-auto mx-8;
   }
   .topnav-mobile a {
-    @apply float-none py-4 m-0 shadow hover:scale-100;
+    @apply float-none py-4 m-0 shadow;
+  }
+  a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #000;
+    @apply scale-105;
+  }
+
+  a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    @apply bg-secondary;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  a:hover::before {
+    transform: scaleX(1);
   }
 
   html {
     scroll-behavior: smooth;
   }
   .nav-button-selected {
-    @apply text-secondary;
+    @apply !text-secondary;
   }
 
   .wrapper {
