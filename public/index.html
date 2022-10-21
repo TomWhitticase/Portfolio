@@ -69,61 +69,67 @@
       <a href="#projects" onclick="menuClick()">Projects</a>
     </div>
 
-    <div id="home" class="container min-h-screen">
-      <div
-        class="flex flex-row p-4 gap-20 flex-wrap justify-center items-center"
-      >
-        <!-- <div class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10">   -->
-        <div class="w-auto p-4 flex flex-col items-start">
-          <h1 class="text-left">Hello there!</h1>
-          <h1 class="!text-secondary text-left">I'm Tom.</h1>
+    <div
+      class="wrapper bg-[url('images/CircuitBoard.svg')] dark:bg-[url('images/CircuitBoard-dark.svg')] bg-no-repeat bg-cover bg-fixed"
+    >
+      <div id="home" class="container min-h-screen">
+        <div
+          class="flex flex-row p-4 gap-20 flex-wrap justify-center items-center"
+        >
+          <!-- <div class="my-10 mx-0 2xl:mx-40 flex flex-col lg:flex-row justify-center gap-10">   -->
+          <div class="w-auto p-4 flex flex-col items-start">
+            <h1 class="text-left">Hello there!</h1>
+            <h1 class="!text-secondary text-left">I'm Tom.</h1>
 
-          <p class="text-3xl text-left">
-            I am a <span class="!text-octary">full stack</span> developer<span
-              class="blink"
-              >|</span
-            >
-          </p>
+            <p class="text-3xl text-left">
+              I am a <span class="!text-octary">full stack</span> developer<span
+                class="blink"
+                >|</span
+              >
+            </p>
 
-          <a href="#about">
-            <button class="btn2">
-              About Me <i class="fa fa-arrow-down mx-1"></i>
-            </button>
-          </a>
-          <div class="socials text-senary dark:text-nonary">
-            <a
-              href="https://www.linkedin.com/in/tom-whitticase/"
-              target="_blank"
-            >
-              <i class="fa fa-linkedin-square drop-shadow-lg"></i>
+            <a href="#about">
+              <button class="btn2">
+                About Me <i class="fa fa-arrow-down mx-1"></i>
+              </button>
             </a>
-            <a href="https://github.com/TomWhitticase" target="_blank">
-              <i class="fa fa-github drop-shadow-lg"></i>
-            </a>
-            <a href="mailto: tom.pe.wh@gmail.com" target="_blank">
-              <i class="fa fa-envelope drop-shadow-lg"></i>
-            </a>
-            <a href="https://www.instagram.com/tom.p.w/" target="_blank">
-              <i class="fa fa-instagram drop-shadow-lg"></i>
-            </a>
+            <div class="socials text-senary dark:text-nonary">
+              <a
+                href="https://www.linkedin.com/in/tom-whitticase/"
+                target="_blank"
+              >
+                <i class="fa fa-linkedin-square drop-shadow-lg"></i>
+              </a>
+              <a href="https://github.com/TomWhitticase" target="_blank">
+                <i class="fa fa-github drop-shadow-lg"></i>
+              </a>
+              <a href="mailto: tom.pe.wh@gmail.com" target="_blank">
+                <i class="fa fa-envelope drop-shadow-lg"></i>
+              </a>
+              <a href="https://www.instagram.com/tom.p.w/" target="_blank">
+                <i class="fa fa-instagram drop-shadow-lg"></i>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="my-auto mx-8">
-          <img
-            class="rounded-2xl shadow-lg object-cover w-72"
-            src="images/tombeachmalaga.jpg"
-          />
+          <div class="my-auto mx-8">
+            <img
+              class="rounded-2xl shadow-lg object-cover w-72"
+              src="images/tombeachmalaga.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
-    <div id="about" class="bg-primary dark:bg-septary">
+    <div id="about">
+      <h2 class="bg-primary dark:bg-decary text-center p-10">
+        About Me <i class="fa fa-person text-octary"></i>
+      </h2>
       <div class="container">
-        <h2 class="">About me <i class="fa fa-person text-octary"></i></h2>
         <div class="flex flex-row m-auto my-10 gap-10 flex-wrap justify-center">
           <div class="flex flex-row flex-wrap gap-10">
             <img
               class="object-cover w-64 lg:w-80 rounded-lg m-auto"
-              src="images/openday.jpg"
+              src="images/topofmountain.jpg"
             />
             <div class="flex flex-col flex-start items-start">
               <p class="w-80 p-4 text-left">
@@ -137,7 +143,9 @@
                 >
                 in the UK. I am passionate about programming and I am always
                 teaching myself new skills. I am currently looking for a
-                placement year starting summer 2023.
+                placement year starting summer 2023.<br /><br />
+                I love making and playing electric guitars. I enjoy skiing and
+                archery.
               </p>
 
               <a
@@ -154,26 +162,10 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <h2 class="">
-        Personal Interests <i class="fa fa-heart text-octary"></i>
-      </h2>
-      <div class="flex flex-row m-auto my-10 gap-20 flex-wrap justify-center">
-        <div class="flex flex-row flex-wrap gap-20">
-          <img
-            class="object-cover w-52 lg:w-80 rounded-lg m-auto"
-            src="images/topofmountain.jpg"
-          />
-          <div class="flex flex-col flex-start items-start">
-            <p class="w-80 p-4 text-left">
-              I love making and playing electric guitars. I enjoy skiing,
-              climbing, and archery.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
     <div id="skills" class="bg-secondary dark:bg-septary">
+      <h2 class="bg-primary dark:bg-decary text-center p-10">
+        Skills <i class="fa fa-cogs text-octary"></i>
+      </h2>
       <div class="container">
         <div class="">
           <div>
@@ -283,85 +275,90 @@
       </div>
     </div>
 
-    <div id="projects" class="bg-primary dark:bg-decary">
-      <div class="container">
-        <div class="m-auto">
-          <h2 class="m-4 p-4 text-senary">
-            Projects <i class="fa fa-lightbulb text-octary"></i>
-          </h2>
-        </div>
+    <div id="projects" class="bg-primary dark:bg-senary">
+      <h2 class="bg-primary dark:bg-decary text-center p-10">
+        Projects <i class="fa fa-lightbulb text-octary"></i>
+      </h2>
+      <div
+        class="wrapper bg-[url('images/Hexagon.svg')] dark:bg-[url('images/Hexagon-dark.svg')] bg-fixed bg-cover bg-no-repeat"
+      >
+        <div class="container">
+          <div class="m-auto"></div>
 
-        <div class="flex justify-center">
-          <div
-            id="projects-container"
-            class="project-container flex items-center justify-center gap-10 flex-wrap"
-          >
-            <!-- project cards will be put here with js -->
+          <div class="flex justify-center">
+            <div
+              id="projects-container"
+              class="project-container flex items-center justify-center gap-10 flex-wrap"
+            >
+              <!-- project cards will be put here with js -->
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div id="contact" class="container">
-      <h2 class="text-senary">
-        Get in touch <i class="fa-solid fa-handshake-simple text-octary"></i>
+    <div class="wrapper">
+      <h2 class="bg-primary dark:bg-decary text-center p-10">
+        Contact Me <i class="fa fa-handshake-simple text-octary"></i>
       </h2>
-      <form id="contact-form" method="POST">
-        <div class="relative w-full lg:w-1/2 mx-auto my-4">
-          <input
-            type="text"
-            id="name"
-            required
-            placeholder="Name"
-            class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
-          />
-          <i
-            class="fa-solid fa-user absolute top-[50%] -translate-y-[50%] left-2 z-1"
-          ></i>
-        </div>
 
-        <div class="relative w-full lg:w-1/2 mx-auto my-4">
-          <input
-            type="email"
-            id="emailAddress"
-            required
-            placeholder="Email Address"
-            class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
-          />
-          <i
-            class="fa-solid fa-at absolute top-[50%] -translate-y-[50%] left-2 z-1"
-          ></i>
-        </div>
-
-        <div class="relative w-full lg:w-1/2 mx-auto my-4">
-          <textarea
-            type="text"
-            id="message"
-            rows="4"
-            required
-            placeholder="Message"
-            class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
-          ></textarea>
-          <i class="fa-solid fa-message absolute top-4 left-2 z-1"></i>
-        </div>
-
-        <button class="btn1" type="submit">
-          <div id="send-email">Send &nbsp <i class="fa fa-send"></i></div>
-          <div class="hidden" id="sending-email">
-            Sending... &nbsp
-            <svg class="inline h-4 w-4 animate-spin" viewBox="3 3 18 18">
-              <path
-                class="fill-slate-400"
-                d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
-              ></path>
-              <path
-                class="fill-primary"
-                d="M16.9497 7.05015C14.2161 4.31648 9.78392 4.31648 7.05025 7.05015C6.65973 7.44067 6.02656 7.44067 5.63604 7.05015C5.24551 6.65962 5.24551 6.02646 5.63604 5.63593C9.15076 2.12121 14.8492 2.12121 18.364 5.63593C18.7545 6.02646 18.7545 6.65962 18.364 7.05015C17.9734 7.44067 17.3403 7.44067 16.9497 7.05015Z"
-              ></path>
-            </svg>
+      <div id="contact" class="container">
+        <form id="contact-form" method="POST">
+          <div class="relative w-full lg:w-1/2 mx-auto my-4">
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Name"
+              class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
+            />
+            <i
+              class="fa-solid fa-user absolute top-[50%] -translate-y-[50%] left-2 z-1"
+            ></i>
           </div>
-        </button>
-      </form>
+
+          <div class="relative w-full lg:w-1/2 mx-auto my-4">
+            <input
+              type="email"
+              id="emailAddress"
+              required
+              placeholder="Email Address"
+              class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
+            />
+            <i
+              class="fa-solid fa-at absolute top-[50%] -translate-y-[50%] left-2 z-1"
+            ></i>
+          </div>
+
+          <div class="relative w-full lg:w-1/2 mx-auto my-4">
+            <textarea
+              type="text"
+              id="message"
+              rows="4"
+              required
+              placeholder="Message"
+              class="dark:bg-senary w-full p-2 pl-8 shadow-lg"
+            ></textarea>
+            <i class="fa-solid fa-message absolute top-4 left-2 z-1"></i>
+          </div>
+
+          <button class="btn1" type="submit">
+            <div id="send-email">Send &nbsp <i class="fa fa-send"></i></div>
+            <div class="hidden" id="sending-email">
+              Sending... &nbsp
+              <svg class="inline h-4 w-4 animate-spin" viewBox="3 3 18 18">
+                <path
+                  class="fill-slate-400"
+                  d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
+                ></path>
+                <path
+                  class="fill-primary"
+                  d="M16.9497 7.05015C14.2161 4.31648 9.78392 4.31648 7.05025 7.05015C6.65973 7.44067 6.02656 7.44067 5.63604 7.05015C5.24551 6.65962 5.24551 6.02646 5.63604 5.63593C9.15076 2.12121 14.8492 2.12121 18.364 5.63593C18.7545 6.02646 18.7545 6.65962 18.364 7.05015C17.9734 7.44067 17.3403 7.44067 16.9497 7.05015Z"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </form>
+      </div>
     </div>
 
     <footer>

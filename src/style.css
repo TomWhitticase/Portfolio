@@ -65,6 +65,10 @@
     scroll-behavior: smooth;
   }
 
+  .wrapper {
+    @apply w-full;
+  }
+
   .container {
     @apply py-20 mx-auto w-auto px-4 text-center;
     display: block;

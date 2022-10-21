@@ -205,7 +205,7 @@ function displayProject(project) {
         <div class="card shadow-lg rounded-lg relative overflow-hidden w-64 lg:w-96 aspect-square">
             <img src ="${project.image}" class="object-cover w-full h-[80%]" alt="" />
             <div class="absolute top-0">
-                <div class="flex flex-wrap gap-2 p-2 child:text-xs child:z-[2] child:bg-octary child:text-primary child:shadow-lg child:rounded-md child:p-2">
+                <div class="flex flex-wrap gap-2 p-2 child:text-xs child:z-[3] child:bg-octary child:text-primary child:shadow-lg child:rounded-md child:p-2">
                     `;
   for (let i = 0; i < project.tags.length; i++) {
     card += `<span class="tag">${project.tags[i]}</span>`;
@@ -214,7 +214,7 @@ function displayProject(project) {
   card += `
                 </div>
             </div>
-            <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-b from-gray-600/40 via-transparent to-gray-600/40">
+            <div class="">
             </div>
             <div class="card__overlay">
                 <div class="card__header">
@@ -223,9 +223,9 @@ function displayProject(project) {
                         <h3 class= "text-left">${project.title}</h3>
                     </div >
                 </div >
-            <p class="text-left p-4 text-xs font-body">
+            <p class="text-left px-4 text-xs font-body">
                     ${project.description}
-        <div class="flex justify-between p-4">`;
+        <div class="flex justify-between child:flex-1 gap-8 p-4">`;
   if (project.site) {
     card += `<button class="btn3">
             <a href ="${project.site}">View <i class="fa fa-arrow-up-right-from-square"></i></a>
