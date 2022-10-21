@@ -1603,9 +1603,9 @@ footer > * {
   }
 }
 
-.hover\:text-secondary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(80 156 61 / var(--tw-text-opacity));
+.hover\:\!text-secondary:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(80 156 61 / var(--tw-text-opacity)) !important;
 }
 
 .child\:z-\[2\] > * {
