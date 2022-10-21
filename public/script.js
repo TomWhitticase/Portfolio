@@ -35,48 +35,7 @@ window.onscroll = function () {
     }
   }
 };
-function tagClick(tag) {
-  //get if tag was highlighted or not
-  let highlighted = tag.classList.contains("highlight-tag");
-  //get all tags matching tag clicked
-  let allTags = __spreadArray([], document.getElementsByClassName("tag"), true);
-  let tags = [];
-  for (let i = 0; i < allTags.length; i++) {
-    if (tag.innerHTML == allTags[i].innerHTML) {
-      tags.push(allTags[i]);
-    }
-  }
-  //toggle tags highlight
-  for (let i = 0; i < tags.length; i++) {
-    if (highlighted) tags[i].classList.remove("highlight-tag");
-    else {
-      tags[i].classList.add("highlight-tag");
-    }
-  }
-  //only show cards containing highlighted tags
-  let cards = document.getElementsByClassName("project-card");
-  for (let i = 0; i < cards.length; i++) {
-    let projectTags = cards[i].querySelectorAll(":scope > div > .tags > .tag");
-    let containsHighlightedTag = false;
-    for (let j = 0; j < projectTags.length; j++) {
-      if (projectTags[j].classList.contains("highlight-tag")) {
-        containsHighlightedTag = true;
-      }
-    }
-    if (containsHighlightedTag) {
-      cards[i].classList.remove("hidden");
-    } else {
-      cards[i].classList.add("hidden");
-    }
-  }
-  //if no tags highlighted then show all projects
-  let nTags = document.querySelectorAll(".highlight-tag").length;
-  if (nTags == 0) {
-    for (let i = 0; i < cards.length; i++) {
-      cards[i].classList.remove("hidden");
-    }
-  }
-}
+
 function menuClick() {
   let nav = document.getElementById("topnav-mobile");
   let icon = document.getElementById("menu-icon");
@@ -183,7 +142,7 @@ if (window.matchMedia) {
   light();
 }
 //ORDERED
-//get project data and display them in the carousel
+//get project data and display them
 fetch("resources/projects.json")
   .then(function (response) {
     return response.json();
@@ -249,6 +208,51 @@ function exit(element, animationClass) {
     element.classList.add("hidden");
   }, 500);
 }
+
+function checkVisible(elm, evalType) {
+  evalType = evalType || "visible";
+  const padding = 200;
+  var vpH = $(window).height(), // Viewport Height
+    st = $(window).scrollTop(), // Scroll Top
+    y = $(elm).offset().top,
+    elementHeight = $(elm).height();
+
+  if (evalType === "visible")
+    return y + padding < vpH + st && y - padding > st - elementHeight;
+  if (evalType === "above") return y + padding < vpH + st;
+}
+
+//highlight nav tab
+window.addEventListener("scroll", () => {
+  const topnavs = document.getElementsByClassName("topnav");
+  const tabs = [];
+
+  const navButtons = topnavs[0].children;
+  for (let j = 0; j < navButtons.length; j++) {
+    tabs.push(document.getElementById(navButtons[j].href.split("#")[1]));
+  }
+
+  let selectedTabId;
+  for (let i = 0; i < tabs.length; i++) {
+    const tab = tabs[i];
+    if (checkVisible(tab)) {
+      selectedTabId = tab.id;
+      break;
+    }
+  }
+  console.log("Selected id: " + selectedTabId);
+  for (let i = 0; i < topnavs.length; i++) {
+    for (let j = 0; j < topnavs[i].children.length; j++) {
+      const navButton = topnavs[i].children[j];
+
+      if (navButton.href.split("#")[1] === selectedTabId) {
+        navButton.classList.add("nav-button-selected");
+      } else {
+        navButton.classList.remove("nav-button-selected");
+      }
+    }
+  }
+});
 
 fetch("https://portfolio-backend-self.vercel.app/index.js", {
   mode: "cors",

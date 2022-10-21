@@ -64,13 +64,16 @@
   html {
     scroll-behavior: smooth;
   }
+  .nav-button-selected {
+    @apply text-secondary;
+  }
 
   .wrapper {
     @apply w-full;
   }
 
   .container {
-    @apply py-20 mx-auto w-auto px-4 text-center;
+    @apply py-10 mx-auto w-auto px-4 text-center;
     display: block;
   }
 
