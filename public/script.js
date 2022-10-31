@@ -186,14 +186,14 @@ function displayProject(project) {
                     ${project.description}
         <div class="flex justify-between child:flex-1 gap-8 p-4">`;
   if (project.site) {
-    card += `<button class="btn3">
-            <a href ="${project.site}">View <i class="fa fa-arrow-up-right-from-square"></i></a>
-            </button>`;
+    card += `
+            <a class="btn3" href ="${project.site}">View <i class="fa fa-arrow-up-right-from-square"></i></a>
+            `;
   }
   if (project.code) {
-    card += `<button class="btn3">
-        <a href="${project.code}">Code <i class="fa fa-code"></i></a>
-        </button>`;
+    card += `
+        <a class="btn3" href="${project.code}">Code <i class="fa fa-code"></i></a>
+        `;
   }
 
   card += `</></></div></>`;
